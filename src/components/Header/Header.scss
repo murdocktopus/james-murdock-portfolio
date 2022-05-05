@@ -1,0 +1,46 @@
+// Header.scss
+
+@use "../../styles/global" as *;
+
+.header {
+  background-color: $color-primary-dark;
+  height: $header-search-height-mobile;
+  @include display-flex(row, space-between, center);
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  z-index: 10;
+
+  @include bp-tablet {
+    height: $header-height-mobile;
+  }
+
+  &__container {
+    @include display-flex(row, none, space-between);
+    flex-wrap: wrap;
+    @include margin;
+    width: 100%;
+    gap: 0;
+
+    @include bp-tablet {
+      @include display-flex(row, center, space-between);
+      flex-wrap: nowrap;
+      gap: 5%;
+    }
+
+    @include bp-desktop {
+      gap: 3%;
+    }
+  }
+
+  &__nav-link {
+    @include display-flex(row, center, center);
+    gap: 10%;
+  }
+}
+
+.logo {
+  @include subheader;
+  color: $color-primary-light;
+  text-decoration: none;
+}
