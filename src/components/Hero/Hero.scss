@@ -1,0 +1,85 @@
+// Hero.scss
+@use "../../styles/global" as *;
+
+.hero {
+  //   width: 95%;
+  height: 30rem;
+  background-color: $color-primary-background;
+  @include display-flex(column, space-between, space-between);
+  flex-wrap: wrap;
+  padding-top: $nav-height-mobile;
+  @include margin;
+  gap: 0.25rem;
+
+  &__secondary {
+    width: 25%;
+    height: 32.775%;
+    background-image: url(../../assets/images/forrestgump.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.hero-main {
+  width: 75%;
+  background-image: url(../../assets/images/forrestgump.jpg);
+  height: 30rem;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+
+  &__overlay {
+    background-image: linear-gradient(
+      rgba($color: #000000, $alpha: 0),
+      rgba($color: #000000, $alpha: 0.8),
+      rgba($color: #000000, $alpha: 1)
+    );
+    height: 45%;
+    width: 100%;
+    position: relative;
+    top: 55%;
+    @include display-flex(row, flex-end, flex-start);
+    flex-wrap: wrap;
+  }
+
+  &__img2 {
+    background-image: url(../../assets/images/Forrest_Gump_poster.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 8rem;
+    height: 12.2094rem;
+    margin: 0 1rem 1rem 1rem;
+  }
+
+  &__text-container {
+    margin: 0 0 1rem 1rem;
+  }
+
+  &__title {
+    color: $color-primary-text;
+    font-size: 2rem;
+    // padding: 0.5rem;
+    margin: 0 0 0.5rem 0;
+    text-align: left;
+  }
+
+  &__subtitle {
+    color: $color-primary-text;
+    font-size: 1.5rem;
+    // padding: 0.5rem;
+    padding: 0.25rem 0 0 0;
+    text-align: left;
+  }
+}
+
+.icon {
+  color: $color-primary-text;
+
+  &--hero-main {
+    // height: 3rem;
+    // width: 3rem;
+    font-size: 4.75rem;
+    margin: 0 0 1rem 0;
+  }
+}

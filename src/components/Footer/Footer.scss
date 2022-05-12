@@ -3,12 +3,12 @@
 @use "../../styles/global" as *;
 
 .footer {
-  background-color: $color-primary-light;
+  background-color: $color-primary-text;
   height: $nav-height-mobile;
   display: none;
 
   &__text {
-    color: $color-primary-dark;
+    color: $color-primary-background;
   }
 
   @include bp-tablet {

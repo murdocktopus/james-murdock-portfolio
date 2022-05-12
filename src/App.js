@@ -7,10 +7,6 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -28,7 +24,9 @@ class App extends Component {
         <Router>
           <Header />
           <Switch>
-            <Route path="/" exact to={HomePage} />
+            <Route path="/" exact>
+              <HomePage />
+            </Route>
           </Switch>
           <Footer />
         </Router>

@@ -1,4 +1,7 @@
 // styles/_reset.scss
+
+@use "./colors" as *;
+
 html,
 body,
 div,
@@ -87,6 +90,7 @@ video {
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
+  font-family: "Amazon Ember";
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -126,4 +130,23 @@ table {
 }
 html {
   scroll-behavior: smooth;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: $color-primary-grey;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $color-primary-grey;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $color-primary-grey;
+  opacity: 1;
+}
+:-moz-placeholder {
+  /* Firefox 4 - 18 */
+  color: $color-primary-grey;
+  opacity: 1;
 }
