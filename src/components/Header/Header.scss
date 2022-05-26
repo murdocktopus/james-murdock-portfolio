@@ -3,7 +3,7 @@
 @use "../../styles/global" as *;
 
 .header {
-  background-color: $color-primary-background;
+  background-color: $color-primary-dark;
   height: $header-search-height-mobile;
   @include display-flex(row, center, center);
   position: fixed;

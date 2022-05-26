@@ -1,0 +1,29 @@
+// PostPlaylist.scss
+@use "../../styles/global" as *;
+
+.playlist {
+  @include margin;
+
+  &__title {
+    color: $color-primary-accent;
+    text-align: left;
+    @include subheader;
+  }
+
+  &__list-container {
+    @include display-flex(row, flex-start, flex-start);
+  }
+}
+
+.playlist-card {
+  width: 25rem;
+  &__img {
+    width: 24.666rem;
+  }
+
+  &__title {
+    color: $color-primary-text;
+    text-align: left;
+    @include p3;
+  }
+}

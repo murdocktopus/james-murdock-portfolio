@@ -1,6 +1,6 @@
 import "./Header.scss";
 import { Link, Route, Redirect } from "react-router-dom";
-import { CgMenu } from "react-icons/cg";
+import { CgMenu, CgSearch } from "react-icons/cg";
 
 function Header(props) {
   return (
@@ -29,7 +29,6 @@ function Header(props) {
               id="site-search"
               autoComplete="off"
             />
-
             <button type="submit" value="submit" hidden></button>
           </form>
 
