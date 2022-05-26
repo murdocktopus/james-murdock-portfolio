@@ -1,0 +1,15 @@
+// PostCard2.scss
+@use "../../styles/global" as *;
+
+.post-card2 {
+  width: 12rem;
+  &__img {
+    width: 11.583rem;
+  }
+
+  &__title {
+    color: $color-primary-text;
+    text-align: left;
+    @include p3;
+  }
+}
