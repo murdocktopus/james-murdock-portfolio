@@ -1,8 +1,9 @@
 // HomePlaylist2.scss
 @use "../../styles/global" as *;
 
-.playlist {
+.playlist2 {
   @include margin;
+  overflow: hidden;
 
   &__title {
     color: $color-primary-accent;
@@ -14,18 +15,29 @@
   &__list-container {
     @include display-flex(row, flex-start, flex-start);
     gap: 1rem;
+    overflow: hidden;
+    flex-wrap: nowrap;
+
+    @include bp-tablet {
+      width: fit-content;
+    }
+
+    @include bp-desktop {
+      flex-wrap: wrap;
+    }
   }
 }
 
-.playlist-card {
-  width: 25rem;
-  &__img {
-    width: 24.666rem;
-  }
+// .playlist-card {
+//   width: 25rem;
+//   &__img {
+//     width: 24.666rem;
+//     max-width: 100%;
+//   }
 
-  &__title {
-    color: $color-primary-text;
-    text-align: left;
-    @include p3;
-  }
-}
+//   &__title {
+//     color: $color-primary-text;
+//     text-align: left;
+//     @include p3;
+//   }
+// }
