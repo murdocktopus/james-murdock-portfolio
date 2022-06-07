@@ -1,18 +1,19 @@
 import "./Header.scss";
 import { Link, Route, Redirect } from "react-router-dom";
-import { CgMenu, CgSearch } from "react-icons/cg";
+import { CgMenu, CgSearch, CgProfile } from "react-icons/cg";
+import { FaLaptopCode, FaBlog, FaSearch } from "react-icons/fa";
 
 function Header(props) {
   return (
     <>
       <header className="header">
         <div className="header__container">
-          <Link to="/" className="header__nav-link">
+          <Link to="/" className="header__nav-link header__nav-link--logo">
             <p className="logo">JMDb</p>
           </Link>
 
           <div className="header__nav-container">
-            <CgMenu className="icon" />
+            <CgMenu className="header-icon" />
             <p className="header__nav-text">Menu</p>
           </div>
 
@@ -32,12 +33,20 @@ function Header(props) {
             <button type="submit" value="submit" hidden></button>
           </form>
 
-          <Link to="/" className="header__nav-link">
-            <p className="header__nav-text">PORTFOLIO</p>
+          <div className="header__block"></div>
+
+          <Link to="/" className="header__nav-link header__nav-link--search">
+            <FaSearch className="header-icon header-icon--hidden" />
           </Link>
 
-          <Link to="/" className="header__nav-link">
+          <Link to="/" className="header__nav-link header__nav-link--portfolio">
+            <p className="header__nav-text">PORTFOLIO</p>
+            <FaLaptopCode className="header-icon header-icon--hidden" />
+          </Link>
+
+          <Link to="/" className="header__nav-link header__nav-link--blog">
             <p className="header__nav-text">BLOG</p>
+            <FaBlog className="header-icon header-icon--hidden" />
           </Link>
         </div>
       </header>
