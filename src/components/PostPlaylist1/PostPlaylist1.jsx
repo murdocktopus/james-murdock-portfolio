@@ -5,10 +5,10 @@ import PostCard1 from "../PostCard1/PostCard1";
 function PostPlaylist1(props) {
   return (
     <>
-      <section className="post-playlist-section">
-        <div className="playlist">
-          <p className="playlist__title">{props.title}</p>
-          <div className="playlist__list-container">
+      <section className="post-playlist1-section">
+        <div className="playlist1">
+          <p className="playlist1__title">{props.title}</p>
+          <div className="playlist1__list-container">
             <PostCard1 />
             <PostCard1 />
             <PostCard1 />
