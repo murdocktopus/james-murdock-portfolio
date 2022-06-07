@@ -2,9 +2,23 @@
 @use "../../styles/global" as *;
 
 .post-card2 {
-  width: 12rem;
+  width: 37.5vw;
+
+  @include bp-tablet {
+    width: 12rem;
+  }
+
+  @include bp-desktop {
+    width: 12rem;
+    max-width: 100%;
+  }
+
   &__img {
-    width: 11.583rem;
+    width: 37.5vw;
+
+    @include bp-tablet {
+      width: 11.583rem;
+    }
   }
 
   &__title {
