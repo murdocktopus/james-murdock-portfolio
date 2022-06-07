@@ -1,6 +1,6 @@
 import "./Hero.scss";
 import { FiAward } from "react-icons/fi";
-import { CgSearch } from "react-icons/cg";
+import { CgSearch, CgChevronRight } from "react-icons/cg";
 import highlightImg from "../../assets/images/Forrest_Gump_poster.jpg";
 
 function Hero() {
@@ -9,7 +9,7 @@ function Hero() {
       <div className="hero-card">
         <div className="hero-card__overlay">
           <div className="hero-card__img2"></div>
-          <FiAward className="icon icon--hero-card" />
+          <FiAward className="hero-card__icon hero-card__icon--hero-card" />
           <div className="hero-card__text-container">
             <p className="hero-card__title">
               Top 10: My Favourite Movies of All Time
@@ -78,7 +78,11 @@ function Hero() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="hero-queue-link__container">
         <p className="hero-queue-link__text">Browse blog</p>
+        <CgChevronRight className="icon" />
       </div>
     </section>
   );
