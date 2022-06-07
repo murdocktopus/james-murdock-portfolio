@@ -1,7 +1,7 @@
 // PostCard2.scss
 @use "../../styles/global" as *;
 
-.post-card2 {
+.post-card-small {
   width: 37.5vw;
 
   @include bp-tablet {

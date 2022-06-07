@@ -8,6 +8,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
+import BlogPage from "./pages/BlogPage/BlogPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
@@ -26,6 +27,10 @@ class App extends Component {
           <Switch>
             <Route path="/" exact>
               <HomePage />
+            </Route>
+
+            <Route path="/blog" exact>
+              <BlogPage />
             </Route>
           </Switch>
           <Footer />
