@@ -11,13 +11,57 @@ import HomePage from "./pages/HomePage/HomePage";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import axios from "axios";
 
 class App extends Component {
-  state = {};
+  state = {
+    blogPosts: [],
+    searchTerm: "",
+    searchSubmitted: false,
+    selectedBlogPost: {},
+  };
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.getBlogPosts();
+  }
 
   componentDidUpdate() {}
+
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("Submit Search Event Target Value:", e.target.search.value);
+  //   this.setState(
+  //     {
+  //       searchSubmitted: true,
+  //       searchTerm: e.target.search.value,
+  //     },
+  //     () => {
+  //       this.getBlogPosts();
+  //     }
+  //   );
+  //   e.target.reset();
+  // };
+
+  // getBlogPosts = () => {
+  //   axios
+  //     .get(
+  //       `${process.env.REACT_APP_API_URL}/blog-posts/q=${this.state.searchTerm}`
+  //     )
+  //     .then((response) => {
+  //       this.setState(
+  //         {
+  //           blogPosts: response.data.items,
+  //           searchSubmitted: false,
+  //         },
+  //         () => {
+  //           console.log(this.state);
+  //         }
+  //       );
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   render() {
     return (

@@ -1,0 +1,29 @@
+// PostFeed.scss
+@use "../../styles/global" as *;
+
+.post-feed {
+  @include margin;
+  overflow: hidden;
+
+  &__title {
+    color: $color-primary-accent;
+    text-align: left;
+    @include subheader;
+    margin: 3rem 0 1rem 0;
+  }
+
+  &__list-container {
+    @include display-flex(column, flex-start, flex-start);
+    gap: 1rem;
+    overflow: hidden;
+    flex-wrap: nowrap;
+
+    @include bp-tablet {
+      //   width: fit-content;
+    }
+
+    @include bp-desktop {
+      flex-wrap: wrap;
+    }
+  }
+}
