@@ -7,6 +7,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
+
 import HomePage from "./pages/HomePage/HomePage";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import Header from "./components/Header/Header";
@@ -19,49 +20,66 @@ class App extends Component {
     searchTerm: "",
     searchSubmitted: false,
     selectedBlogPost: {},
+    allPosts: [],
   };
 
   componentDidMount() {
-    this.getBlogPosts();
+    this.getBlogPostsGooglePrior();
+    this.getPosts();
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    console.log(this.state.allPosts);
+  }
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("Submit Search Event Target Value:", e.target.search.value);
-  //   this.setState(
-  //     {
-  //       searchSubmitted: true,
-  //       searchTerm: e.target.search.value,
-  //     },
-  //     () => {
-  //       this.getBlogPosts();
-  //     }
-  //   );
-  //   e.target.reset();
-  // };
+  getPosts = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}`)
+      .then((response) => {
+        console.log("All Posts in API", response.data);
+        let allPosts = response.data;
+        this.setState({
+          allPosts: allPosts,
+        });
+      })
+      .catch((err) => {
+        console.log("error 1 catch", err);
+      });
+  };
 
-  // getBlogPosts = () => {
-  //   axios
-  //     .get(
-  //       `${process.env.REACT_APP_API_URL}/blog-posts/q=${this.state.searchTerm}`
-  //     )
-  //     .then((response) => {
-  //       this.setState(
-  //         {
-  //           blogPosts: response.data.items,
-  //           searchSubmitted: false,
-  //         },
-  //         () => {
-  //           console.log(this.state);
-  //         }
-  //       );
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Submit Search Event Target Value:", e.target.search.value);
+    this.setState(
+      {
+        searchSubmitted: true,
+        searchTerm: e.target.search.value,
+      },
+      () => {
+        this.getBlogPostsGooglePrior();
+      }
+    );
+    e.target.reset();
+  };
+
+  getBlogPostsGooglePrior = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/${this.state.searchTerm}`)
+      .then((response) => {
+        this.setState(
+          {
+            blogPosts: response.data.items,
+            searchSubmitted: false,
+          },
+          () => {
+            console.log(this.state);
+          }
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   render() {
     return (
