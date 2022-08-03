@@ -17,9 +17,6 @@ import axios from 'axios';
 class App extends Component {
   state = {
     allPosts: [],
-    heroPosts: [],
-    featuredPosts: [],
-    featuredCategories: ['portfolio', 'blog'],
     searchTerm: '',
     searchSubmitted: false,
     selectedBlogPost: {},
@@ -92,7 +89,6 @@ class App extends Component {
             <Route path='/' exact>
               <HomePage allPosts={this.state.allPosts} />
             </Route>
-
             <Route path='/blog' exact>
               <BlogPage allPosts={this.state.allPosts} />
             </Route>

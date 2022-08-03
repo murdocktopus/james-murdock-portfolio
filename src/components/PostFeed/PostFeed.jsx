@@ -1,7 +1,7 @@
 import './PostFeed.scss';
 import { Link, Route, Redirect } from 'react-router-dom';
 import PostCardLarge from '../PostCardLarge/PostCardLarge';
-import PostCardLong from '../PostCardLong/PostCardLong';
+import PostCardFull from '../PostCardFull/PostCardFull';
 
 function PostFeed(props) {
   console.log('PostFeed props.posts:', props.posts);
@@ -14,21 +14,24 @@ function PostFeed(props) {
             {props.posts &&
               props.posts.map((post) => {
                 return (
-                  <PostCardLong
+                  <PostCardFull
                     key={post.id}
                     id={post.id}
+                    name={post.name}
                     selfLink={post.selfLink}
                     title={post.title}
                     subtitle={post.subtitle}
                     imgHero={post.imgHero}
                     imgPoster={post.imgPoster}
                     icon={post.icon}
+                    writtenDate={post.writtenDate}
                     publishedDate={post.publishedDate}
+                    updateDate={post.updateDate}
                     adCopy={post.adCopy}
                     categoryTags={post.categoryTags}
                     skillTags={post.skillTags}
                     pageAndLink={post.pageAndLink}
-                    sections={post.sections}
+                    content={post.content}
                   />
                 );
               })}

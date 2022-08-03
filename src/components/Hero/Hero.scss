@@ -1,5 +1,5 @@
 // Hero.scss
-@use "../../styles/global" as *;
+@use '../../styles/global' as *;
 
 .hero {
   background-color: $color-primary-background;
@@ -64,7 +64,7 @@
     }
   }
 
-  &__img2 {
+  &__poster-img {
     background-image: url(../../assets/images/Forrest_Gump_poster.jpg);
     background-size: contain;
     background-repeat: no-repeat;

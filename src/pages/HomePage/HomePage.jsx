@@ -10,15 +10,11 @@ class HomePage extends Component {
     heroPosts: [],
     featuredPosts: [],
     featuredCategories: ['portfolio', 'blog'],
-    searchTerm: '',
-
-    searchSubmitted: false,
-    selectedBlogPost: {},
   };
   render() {
     return (
       <div className='home-page'>
-        <Hero />
+        <Hero heroPosts={this.state.heroPosts} />
         <PostPlaylistLarge title='Featured Today' />
         <PostPlaylistSmall title='Blog' />
         <PostPlaylistSmall title='Projects' />

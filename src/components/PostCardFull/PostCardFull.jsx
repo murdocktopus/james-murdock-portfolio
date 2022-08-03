@@ -1,21 +1,21 @@
-import './PostCardLong.scss';
+import './PostCardFull.scss';
 import { Link, Route, Redirect } from 'react-router-dom';
 import heroImage from '../../assets/images/forrestgump.jpg';
 import posterImage from '../../assets/images/Forrest_Gump_poster.jpg';
 
-function PostCardLong(props) {
-  // console.log('PostCardLong props:', props);
+function PostCardFull(props) {
+  // console.log('PostCardFull props:', props);
   console.log(`${process.env.REACT_APP_API_URL}`);
   return (
     <>
       <div className='post-card-long'>
         <img
-          className='post-card-long__img1'
+          className='post-card-long__imgHero'
           src={`${process.env.REACT_APP_API_URL}${props.imgHero}`}
           alt='Post_Image'
         />
         <img
-          className='post-card-long__img2'
+          className='post-card-long__imgPoster'
           src={`${process.env.REACT_APP_API_URL}${props.imgPoster}`}
           alt='Post_Image'
         />
@@ -33,4 +33,4 @@ function PostCardLong(props) {
     </>
   );
 }
-export default PostCardLong;
+export default PostCardFull;

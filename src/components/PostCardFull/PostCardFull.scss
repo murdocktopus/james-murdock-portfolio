@@ -1,5 +1,5 @@
-// PostCardLong.scss
-@use "../../styles/global" as *;
+// PostCardFull.scss
+@use '../../styles/global' as *;
 
 .post-card-long {
   width: 92.5vw;
@@ -24,7 +24,7 @@
     max-width: 100%;
   }
 
-  &__img1 {
+  &__imgHero {
     width: inherit;
 
     @include bp-tablet {
@@ -34,7 +34,7 @@
     }
   }
 
-  &__img2 {
+  &__imgPoster {
     display: none;
 
     @include bp-tablet {
