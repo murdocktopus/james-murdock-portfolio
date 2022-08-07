@@ -14,7 +14,7 @@ function Post(props) {
   const postIcon = props.selectedPost.icon;
   const postWrittenDate = props.selectedPost.writtenDate;
   const postPublishedDate = props.selectedPost.publishedDate;
-  const postUpdateDate = props.selectedPost.updateDate;
+  const postUpdatedDate = props.selectedPost.updatedDate;
   const postAdCopy = props.selectedPost.adCopy;
   const postTags = props.selectedPost.tags;
   const postSkillTags = props.selectedPost.skillTags;
@@ -22,7 +22,11 @@ function Post(props) {
   const postPageAndLink = props.selectedPost.pageAndLink;
   const postContent = props.selectedPost.content;
 
-  console.log(`${process.env.REACT_APP_API_URL}${postHeroImg}`);
+  const contentArr =
+    postContent &&
+    postContent.p.map((p) => <div className='post-content__div'>{p}</div>);
+
+  console.log(contentArr);
 
   return (
     <>
@@ -31,11 +35,11 @@ function Post(props) {
           <div
             className='post-hero__img'
             style={{
-              'background-image': `url(${process.env.REACT_APP_API_URL}${postHeroImg})`,
+              backgroundImage: `url(${process.env.REACT_APP_API_URL}${postHeroImg})`,
             }}
-            // style='background-image:{process.env.REACT_APP_API_URL}'
           ></div>
         </div>
+        <div className='post-content'>{contentArr}</div>
       </div>
     </>
   );

@@ -26,7 +26,7 @@ function PostFeed(props) {
                     icon={post.icon}
                     writtenDate={post.writtenDate}
                     publishedDate={post.publishedDate}
-                    updateDate={post.updateDate}
+                    updatedDate={post.updatedDate}
                     adCopy={post.adCopy}
                     categoryTags={post.categoryTags}
                     skillTags={post.skillTags}

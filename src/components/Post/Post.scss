@@ -2,7 +2,9 @@
 @use '../../styles/global' as *;
 
 .post {
-  @include display-flex(row, flex-start, flex-start);
+  width: 100%;
+  padding-top: 4rem;
+  @include display-flex(column, flex-start, center);
 
   @include bp-tablet {
   }
@@ -12,8 +14,6 @@
 }
 
 .post-hero {
-  @include display-flex(row, flex-start, flex-start);
-
   @include bp-tablet {
   }
 
@@ -26,5 +26,14 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+}
+
+.post-content {
+  width: 100%;
+
+  &__div {
+    width: 100%;
+    color: $color-primary-text;
   }
 }
