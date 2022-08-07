@@ -1,17 +1,17 @@
 // PostCardFull.scss
 @use '../../styles/global' as *;
 
-.post-card-long {
+.post-card-full {
   width: 92.5vw;
-  max-height: 25rem;
-  @include display-flex(row, center, center);
-  flex-wrap: wrap;
+  height: fit-content;
+  @include display-flex(column, center, center);
+  flex-wrap: nowrap;
   background-color: $color-primary-dark;
 
   @include bp-tablet {
-    @include display-flex(column, flex-start, flex-start);
+    @include display-flex(row, flex-start, flex-start);
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     max-height: 50vw;
     gap: 0;
     max-height: 23rem;
@@ -20,17 +20,23 @@
   }
 
   @include bp-desktop {
-    width: 25rem;
     max-width: 100%;
   }
 
   &__imgHero {
     width: inherit;
+    max-width: 100%;
 
     @include bp-tablet {
       max-width: 100%;
       width: 24.666rem;
       display: none;
+    }
+
+    @include bp-laptop {
+      max-width: 100%;
+      width: 24.666rem;
+      display: inline-block;
     }
   }
 
@@ -44,6 +50,15 @@
       max-width: 14.375rem;
       //   padding-bottom: 5vw;
     }
+
+    @include bp-laptop {
+      display: none;
+    }
+  }
+
+  &__text-container {
+    @include display-flex(column, flex-start, flex-start);
+    flex-wrap: wrap;
   }
 
   &__title {
@@ -55,27 +70,31 @@
 
     @include bp-tablet {
       padding: 0 0 1rem 1rem;
-      margin-left: -5vw;
+      // margin-left: -5vw;
     }
   }
 
   &__text {
-    display: none;
+    // display: none;
+    color: $color-primary-text;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include bp-tablet {
       padding: 0 0 0 1rem;
-      margin-left: calc(1vw * -4);
-      color: $color-primary-text;
-      text-align: left;
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.5rem;
+      // margin-left: calc(1vw * -4);
       display: -webkit-box;
       -webkit-line-clamp: 13;
       -webkit-box-orient: vertical;
       max-width: 58vw;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   }
+}
+
+.paragraph {
+  color: white;
 }

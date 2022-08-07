@@ -1,0 +1,30 @@
+// Post.scss
+@use '../../styles/global' as *;
+
+.post {
+  @include display-flex(row, flex-start, flex-start);
+
+  @include bp-tablet {
+  }
+
+  @include bp-desktop {
+  }
+}
+
+.post-hero {
+  @include display-flex(row, flex-start, flex-start);
+
+  @include bp-tablet {
+  }
+
+  @include bp-desktop {
+  }
+
+  &__img {
+    height: 20rem;
+    width: 100vw;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

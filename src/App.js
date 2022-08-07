@@ -10,6 +10,7 @@ import {
 
 import HomePage from './pages/HomePage/HomePage';
 import BlogPage from './pages/BlogPage/BlogPage';
+import PostPage from './pages/PostPage/PostPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import axios from 'axios';
@@ -28,14 +29,14 @@ class App extends Component {
   }
 
   componentDidUpdate() {
-    console.log('this.state.allPosts:', this.state.allPosts);
+    // console.log('App', 'this.state.allPosts:', this.state.allPosts);
   }
 
   getPosts = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/blog-posts`)
       .then((response) => {
-        console.log('All Posts in API', response.data);
+        // console.log('All Posts in API', response.data);
         let allPosts = response.data;
         this.setState({
           allPosts: allPosts,
@@ -91,6 +92,9 @@ class App extends Component {
             </Route>
             <Route path='/blog' exact>
               <BlogPage allPosts={this.state.allPosts} />
+            </Route>
+            <Route path='/scrollmate' exact>
+              <PostPage allPosts={this.state.allPosts} />
             </Route>
           </Switch>
           <Footer />

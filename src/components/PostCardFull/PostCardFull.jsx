@@ -1,34 +1,33 @@
 import './PostCardFull.scss';
 import { Link, Route, Redirect } from 'react-router-dom';
-import heroImage from '../../assets/images/forrestgump.jpg';
-import posterImage from '../../assets/images/Forrest_Gump_poster.jpg';
 
 function PostCardFull(props) {
   // console.log('PostCardFull props:', props);
-  console.log(`${process.env.REACT_APP_API_URL}`);
+  // console.log(`${process.env.REACT_APP_API_URL}`);
   return (
     <>
-      <div className='post-card-long'>
-        <img
-          className='post-card-long__imgHero'
-          src={`${process.env.REACT_APP_API_URL}${props.imgHero}`}
-          alt='Post_Image'
-        />
-        <img
-          className='post-card-long__imgPoster'
-          src={`${process.env.REACT_APP_API_URL}${props.imgPoster}`}
-          alt='Post_Image'
-        />
-        <p className='post-card-long__title'>{props.title}</p>
-
-        {props.sections &&
-          props.sections.slice(0, 3).map((section) => {
-            return (
-              <p className='post-card-long__text' key={Math.random()}>
-                {section.content}
-              </p>
-            );
-          })}
+      <div className='post-card-full'>
+        <div className='post-card-full__img-container'>
+          <img
+            className='post-card-full__imgHero'
+            src={`${process.env.REACT_APP_API_URL}${props.imgHero}`}
+            alt='Post_Image'
+          />
+          <img
+            className='post-card-full__imgPoster'
+            src={`${process.env.REACT_APP_API_URL}${props.imgPoster}`}
+            alt='Post_Image'
+          />
+        </div>
+        <div className='post-card-full__text-container'>
+          <p className='post-card-full__title'>{props.title}</p>
+          <p className='post-card-full__text'>{props.subtitle}</p>
+          {/* <p className='post-card-full__text'>{props.tags}</p> */}
+          <p className='post-card-full__text'>
+            {props.content.p && props.content.p.slice(0, 1)}&#8230;&#91;Read
+            More&#93;
+          </p>
+        </div>
       </div>
     </>
   );

@@ -30,6 +30,7 @@ function PostFeed(props) {
                     adCopy={post.adCopy}
                     categoryTags={post.categoryTags}
                     skillTags={post.skillTags}
+                    stackTags={post.stackTags}
                     pageAndLink={post.pageAndLink}
                     content={post.content}
                   />

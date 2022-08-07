@@ -6,7 +6,7 @@ import PostPlaylistSmall from '../../components/PostPlaylistSmall/PostPlaylistSm
 import PostFeed from '../../components/PostFeed/PostFeed';
 
 function BlogPage(props) {
-  console.log(props);
+  console.log('BlogPage props:', props);
   return (
     <div className='blog-page'>
       <PostFeed title='Blog' posts={props.allPosts} />
