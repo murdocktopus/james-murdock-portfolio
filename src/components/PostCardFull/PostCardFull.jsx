@@ -1,5 +1,6 @@
 import './PostCardFull.scss';
 import { Link, Route, Redirect } from 'react-router-dom';
+import parse from 'html-react-parser';
 
 function PostCardFull(props) {
   // console.log('PostCardFull props:', props);

@@ -93,6 +93,9 @@ class App extends Component {
             <Route path='/blog' exact>
               <BlogPage allPosts={this.state.allPosts} />
             </Route>
+            <Route path='/tag/design' exact>
+              <BlogPage allPosts={this.state.allPosts} />
+            </Route>
             <Route path='/scrollmate' exact>
               <PostPage allPosts={this.state.allPosts} />
             </Route>

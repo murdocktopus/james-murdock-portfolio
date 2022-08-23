@@ -21,6 +21,7 @@ function PostFeed(props) {
                     selfLink={post.selfLink}
                     title={post.title}
                     subtitle={post.subtitle}
+                    tagline={post.tagline}
                     imgHero={post.imgHero}
                     imgPoster={post.imgPoster}
                     icon={post.icon}

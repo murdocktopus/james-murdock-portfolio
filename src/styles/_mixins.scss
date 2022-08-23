@@ -4,6 +4,12 @@
 @use './colors' as *;
 @use './typography' as *;
 
+@mixin bp-small-phone {
+  @media only screen and (min-width: 375px) {
+    @content;
+  }
+}
+
 @mixin bp-tablet {
   @media only screen and (min-width: 768px) {
     @content;

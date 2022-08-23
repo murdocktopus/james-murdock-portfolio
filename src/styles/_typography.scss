@@ -1,375 +1,375 @@
 // styles/_typography.scss
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,100;0,200;1,100;1,200&family=Titillium+Web:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,100;0,200;1,100;1,200&family=Titillium+Web:wght@400;600&display=swap');
 html {
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-Bold.eot");
-  src: url("../assets/font/AmazonEmber-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-Bold.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-Bold.woff") format("woff"),
-    url("../assets/font/AmazonEmber-Bold.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-Bold.svg#AmazonEmber-Bold") format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-Bold.eot');
+  src: url('../assets/font/AmazonEmber-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-Bold.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-Bold.woff') format('woff'),
+    url('../assets/font/AmazonEmber-Bold.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-Bold.svg#AmazonEmber-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-HeavyItalic.eot");
-  src: url("../assets/font/AmazonEmber-HeavyItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-HeavyItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-HeavyItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmber-HeavyItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-HeavyItalic.svg#AmazonEmber-HeavyItalic")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-HeavyItalic.eot');
+  src: url('../assets/font/AmazonEmber-HeavyItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-HeavyItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-HeavyItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmber-HeavyItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-HeavyItalic.svg#AmazonEmber-HeavyItalic')
+      format('svg');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-Heavy.eot");
-  src: url("../assets/font/AmazonEmber-Heavy.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-Heavy.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-Heavy.woff") format("woff"),
-    url("../assets/font/AmazonEmber-Heavy.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-Heavy.svg#AmazonEmber-Heavy") format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-Heavy.eot');
+  src: url('../assets/font/AmazonEmber-Heavy.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-Heavy.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-Heavy.woff') format('woff'),
+    url('../assets/font/AmazonEmber-Heavy.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-Heavy.svg#AmazonEmber-Heavy') format('svg');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-Thin.eot");
-  src: url("../assets/font/AmazonEmber-Thin.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-Thin.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-Thin.woff") format("woff"),
-    url("../assets/font/AmazonEmber-Thin.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-Thin.svg#AmazonEmber-Thin") format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-Thin.eot');
+  src: url('../assets/font/AmazonEmber-Thin.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-Thin.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-Thin.woff') format('woff'),
+    url('../assets/font/AmazonEmber-Thin.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-Thin.svg#AmazonEmber-Thin') format('svg');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-Italic.eot");
-  src: url("../assets/font/AmazonEmber-Italic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-Italic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-Italic.woff") format("woff"),
-    url("../assets/font/AmazonEmber-Italic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-Italic.svg#AmazonEmber-Italic")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-Italic.eot');
+  src: url('../assets/font/AmazonEmber-Italic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-Italic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-Italic.woff') format('woff'),
+    url('../assets/font/AmazonEmber-Italic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-Italic.svg#AmazonEmber-Italic')
+      format('svg');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-Light.eot");
-  src: url("../assets/font/AmazonEmber-Light.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-Light.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-Light.woff") format("woff"),
-    url("../assets/font/AmazonEmber-Light.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-Light.svg#AmazonEmber-Light") format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-Light.eot');
+  src: url('../assets/font/AmazonEmber-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-Light.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-Light.woff') format('woff'),
+    url('../assets/font/AmazonEmber-Light.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-Light.svg#AmazonEmber-Light') format('svg');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-LightItalic.eot");
-  src: url("../assets/font/AmazonEmber-LightItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-LightItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-LightItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmber-LightItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-LightItalic.svg#AmazonEmber-LightItalic")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-LightItalic.eot');
+  src: url('../assets/font/AmazonEmber-LightItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-LightItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-LightItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmber-LightItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-LightItalic.svg#AmazonEmber-LightItalic')
+      format('svg');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-Regular.eot");
-  src: url("../assets/font/AmazonEmber-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-Regular.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-Regular.woff") format("woff"),
-    url("../assets/font/AmazonEmber-Regular.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-Regular.svg#AmazonEmber-Regular")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-Regular.eot');
+  src: url('../assets/font/AmazonEmber-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-Regular.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-Regular.woff') format('woff'),
+    url('../assets/font/AmazonEmber-Regular.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-Regular.svg#AmazonEmber-Regular')
+      format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-BoldItalic.eot");
-  src: url("../assets/font/AmazonEmber-BoldItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-BoldItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-BoldItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmber-BoldItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-BoldItalic.svg#AmazonEmber-BoldItalic")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-BoldItalic.eot');
+  src: url('../assets/font/AmazonEmber-BoldItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-BoldItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-BoldItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmber-BoldItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-BoldItalic.svg#AmazonEmber-BoldItalic')
+      format('svg');
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-Medium.eot");
-  src: url("../assets/font/AmazonEmber-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-Medium.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-Medium.woff") format("woff"),
-    url("../assets/font/AmazonEmber-Medium.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-Medium.svg#AmazonEmber-Medium")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-Medium.eot');
+  src: url('../assets/font/AmazonEmber-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-Medium.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-Medium.woff') format('woff'),
+    url('../assets/font/AmazonEmber-Medium.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-Medium.svg#AmazonEmber-Medium')
+      format('svg');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-ThinItalic.eot");
-  src: url("../assets/font/AmazonEmber-ThinItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-ThinItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-ThinItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmber-ThinItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-ThinItalic.svg#AmazonEmber-ThinItalic")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-ThinItalic.eot');
+  src: url('../assets/font/AmazonEmber-ThinItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-ThinItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-ThinItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmber-ThinItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-ThinItalic.svg#AmazonEmber-ThinItalic')
+      format('svg');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember";
-  src: url("../assets/font/AmazonEmber-MediumItalic.eot");
-  src: url("../assets/font/AmazonEmber-MediumItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmber-MediumItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmber-MediumItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmber-MediumItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmber-MediumItalic.svg#AmazonEmber-MediumItalic")
-      format("svg");
+  font-family: 'Amazon Ember';
+  src: url('../assets/font/AmazonEmber-MediumItalic.eot');
+  src: url('../assets/font/AmazonEmber-MediumItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmber-MediumItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmber-MediumItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmber-MediumItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmber-MediumItalic.svg#AmazonEmber-MediumItalic')
+      format('svg');
   font-weight: 500;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-BoldItalic.eot");
-  src: url("../assets/font/AmazonEmberCdRC-BoldItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-BoldItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-BoldItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-BoldItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-BoldItalic.svg#AmazonEmberCdRC-BoldItalic")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-BoldItalic.eot');
+  src: url('../assets/font/AmazonEmberCdRC-BoldItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-BoldItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-BoldItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-BoldItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-BoldItalic.svg#AmazonEmberCdRC-BoldItalic')
+      format('svg');
   font-weight: bold;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-Bold.eot");
-  src: url("../assets/font/AmazonEmberCdRC-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-Bold.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-Bold.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-Bold.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-Bold.svg#AmazonEmberCdRC-Bold")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-Bold.eot');
+  src: url('../assets/font/AmazonEmberCdRC-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-Bold.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-Bold.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-Bold.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-Bold.svg#AmazonEmberCdRC-Bold')
+      format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-Light.eot");
-  src: url("../assets/font/AmazonEmberCdRC-Light.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-Light.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-Light.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-Light.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-Light.svg#AmazonEmberCdRC-Light")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-Light.eot');
+  src: url('../assets/font/AmazonEmberCdRC-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-Light.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-Light.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-Light.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-Light.svg#AmazonEmberCdRC-Light')
+      format('svg');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-Italic.eot");
-  src: url("../assets/font/AmazonEmberCdRC-Italic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-Italic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-Italic.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-Italic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-Italic.svg#AmazonEmberCdRC-Italic")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-Italic.eot');
+  src: url('../assets/font/AmazonEmberCdRC-Italic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-Italic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-Italic.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-Italic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-Italic.svg#AmazonEmberCdRC-Italic')
+      format('svg');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-ThinItalic.eot");
-  src: url("../assets/font/AmazonEmberCdRC-ThinItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-ThinItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-ThinItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-ThinItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-ThinItalic.svg#AmazonEmberCdRC-ThinItalic")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-ThinItalic.eot');
+  src: url('../assets/font/AmazonEmberCdRC-ThinItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-ThinItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-ThinItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-ThinItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-ThinItalic.svg#AmazonEmberCdRC-ThinItalic')
+      format('svg');
   font-weight: 100;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-Regular.eot");
-  src: url("../assets/font/AmazonEmberCdRC-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-Regular.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-Regular.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-Regular.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-Regular.svg#AmazonEmberCdRC-Regular")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-Regular.eot');
+  src: url('../assets/font/AmazonEmberCdRC-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-Regular.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-Regular.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-Regular.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-Regular.svg#AmazonEmberCdRC-Regular')
+      format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-LightItalic.eot");
-  src: url("../assets/font/AmazonEmberCdRC-LightItalic.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-LightItalic.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-LightItalic.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-LightItalic.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-LightItalic.svg#AmazonEmberCdRC-LightItalic")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-LightItalic.eot');
+  src: url('../assets/font/AmazonEmberCdRC-LightItalic.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-LightItalic.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-LightItalic.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-LightItalic.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-LightItalic.svg#AmazonEmberCdRC-LightItalic')
+      format('svg');
   font-weight: 300;
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Cd RC";
-  src: url("../assets/font/AmazonEmberCdRC-Thin.eot");
-  src: url("../assets/font/AmazonEmberCdRC-Thin.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberCdRC-Thin.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberCdRC-Thin.woff") format("woff"),
-    url("../assets/font/AmazonEmberCdRC-Thin.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberCdRC-Thin.svg#AmazonEmberCdRC-Thin")
-      format("svg");
+  font-family: 'Amazon Ember Cd RC';
+  src: url('../assets/font/AmazonEmberCdRC-Thin.eot');
+  src: url('../assets/font/AmazonEmberCdRC-Thin.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberCdRC-Thin.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberCdRC-Thin.woff') format('woff'),
+    url('../assets/font/AmazonEmberCdRC-Thin.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberCdRC-Thin.svg#AmazonEmberCdRC-Thin')
+      format('svg');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Display";
-  src: url("../assets/font/AmazonEmberDisplay-Light.eot");
-  src: url("../assets/font/AmazonEmberDisplay-Light.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberDisplay-Light.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberDisplay-Light.woff") format("woff"),
-    url("../assets/font/AmazonEmberDisplay-Light.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberDisplay-Light.svg#AmazonEmberDisplay-Light")
-      format("svg");
+  font-family: 'Amazon Ember Display';
+  src: url('../assets/font/AmazonEmberDisplay-Light.eot');
+  src: url('../assets/font/AmazonEmberDisplay-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberDisplay-Light.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberDisplay-Light.woff') format('woff'),
+    url('../assets/font/AmazonEmberDisplay-Light.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberDisplay-Light.svg#AmazonEmberDisplay-Light')
+      format('svg');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Display";
-  src: url("../assets/font/AmazonEmberDisplay-Heavy.eot");
-  src: url("../assets/font/AmazonEmberDisplay-Heavy.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberDisplay-Heavy.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberDisplay-Heavy.woff") format("woff"),
-    url("../assets/font/AmazonEmberDisplay-Heavy.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberDisplay-Heavy.svg#AmazonEmberDisplay-Heavy")
-      format("svg");
+  font-family: 'Amazon Ember Display';
+  src: url('../assets/font/AmazonEmberDisplay-Heavy.eot');
+  src: url('../assets/font/AmazonEmberDisplay-Heavy.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberDisplay-Heavy.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberDisplay-Heavy.woff') format('woff'),
+    url('../assets/font/AmazonEmberDisplay-Heavy.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberDisplay-Heavy.svg#AmazonEmberDisplay-Heavy')
+      format('svg');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Display";
-  src: url("../assets/font/AmazonEmberDisplay-Bold.eot");
-  src: url("../assets/font/AmazonEmberDisplay-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberDisplay-Bold.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberDisplay-Bold.woff") format("woff"),
-    url("../assets/font/AmazonEmberDisplay-Bold.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberDisplay-Bold.svg#AmazonEmberDisplay-Bold")
-      format("svg");
+  font-family: 'Amazon Ember Display';
+  src: url('../assets/font/AmazonEmberDisplay-Bold.eot');
+  src: url('../assets/font/AmazonEmberDisplay-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberDisplay-Bold.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberDisplay-Bold.woff') format('woff'),
+    url('../assets/font/AmazonEmberDisplay-Bold.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberDisplay-Bold.svg#AmazonEmberDisplay-Bold')
+      format('svg');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Display";
-  src: url("../assets/font/AmazonEmberDisplay-Medium.eot");
-  src: url("../assets/font/AmazonEmberDisplay-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberDisplay-Medium.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberDisplay-Medium.woff") format("woff"),
-    url("../assets/font/AmazonEmberDisplay-Medium.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberDisplay-Medium.svg#AmazonEmberDisplay-Medium")
-      format("svg");
+  font-family: 'Amazon Ember Display';
+  src: url('../assets/font/AmazonEmberDisplay-Medium.eot');
+  src: url('../assets/font/AmazonEmberDisplay-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberDisplay-Medium.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberDisplay-Medium.woff') format('woff'),
+    url('../assets/font/AmazonEmberDisplay-Medium.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberDisplay-Medium.svg#AmazonEmberDisplay-Medium')
+      format('svg');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Amazon Ember Display";
-  src: url("../assets/font/AmazonEmberDisplay-Regular.eot");
-  src: url("../assets/font/AmazonEmberDisplay-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/font/AmazonEmberDisplay-Regular.woff2") format("woff2"),
-    url("../assets/font/AmazonEmberDisplay-Regular.woff") format("woff"),
-    url("../assets/font/AmazonEmberDisplay-Regular.ttf") format("truetype"),
-    url("../assets/font/AmazonEmberDisplay-Regular.svg#AmazonEmberDisplay-Regular")
-      format("svg");
+  font-family: 'Amazon Ember Display';
+  src: url('../assets/font/AmazonEmberDisplay-Regular.eot');
+  src: url('../assets/font/AmazonEmberDisplay-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/font/AmazonEmberDisplay-Regular.woff2') format('woff2'),
+    url('../assets/font/AmazonEmberDisplay-Regular.woff') format('woff'),
+    url('../assets/font/AmazonEmberDisplay-Regular.ttf') format('truetype'),
+    url('../assets/font/AmazonEmberDisplay-Regular.svg#AmazonEmberDisplay-Regular')
+      format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -413,14 +413,14 @@ html {
 }
 // * Mobile
 @mixin font-mobile-h1-page-header {
-  font-size: 2.8rem;
+  font-size: 2rem;
   line-height: 3.6rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 @mixin font-mobile-h2-subheader {
   font-size: 2rem;
   line-height: 2.8rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 @mixin font-mobile-body-h3-labels-link-buttons {
   font-size: 1.3rem;
@@ -446,4 +446,9 @@ html {
   font-size: 1.1rem;
   line-height: 1.6rem;
   font-weight: 400;
+}
+@mixin font-mobile-chip {
+  font-size: 0.875rem;
+  line-height: 1.6rem;
+  font-weight: 300;
 }
