@@ -1,12 +1,9 @@
 import './BlogPage.scss';
-import { Component } from 'react';
-import Hero from '../../components/Hero/Hero';
-import PostPlaylistLarge from '../../components/PostPlaylistLarge/PostPlaylistLarge';
-import PostPlaylistSmall from '../../components/PostPlaylistSmall/PostPlaylistSmall';
+// import { Component } from 'react';
 import PostFeed from '../../components/PostFeed/PostFeed';
 
 function BlogPage(props) {
-  console.log('BlogPage props:', props);
+  console.log('BlogPage props.allPosts:', props.allPosts);
   return (
     <div className='blog-page'>
       <PostFeed title='Blog' posts={props.allPosts} />

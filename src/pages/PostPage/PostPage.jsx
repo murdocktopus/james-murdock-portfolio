@@ -19,6 +19,7 @@ class PostPage extends Component {
     const foundPost = this.props.allPosts.find(
       (post) => post.name === window.location.pathname.slice(1)
     );
+    console.log('foundPost', foundPost);
     this.setState({
       selectedPost: foundPost,
     });

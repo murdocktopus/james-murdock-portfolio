@@ -1,5 +1,5 @@
 import './Post.scss';
-import { Link, Route, Redirect } from 'react-router-dom';
+// import { Link, Route, Redirect } from 'react-router-dom';
 import parse from 'html-react-parser';
 
 function Post(props) {
@@ -53,18 +53,18 @@ function Post(props) {
   ];
 
   // ALL BASIC PROPS VARIABLES
-  const postId = props.selectedPost.id;
-  const postName = props.selectedPost.name;
-  const postSelfLink = props.selectedPost.selfLink;
+  // const postId = props.selectedPost.id;
+  // const postName = props.selectedPost.name;
+  // const postSelfLink = props.selectedPost.selfLink;
   const postTitle = props.selectedPost.title;
-  const postSubtitle = props.selectedPost.subtitle;
+  // const postSubtitle = props.selectedPost.subtitle;
   const postTagline = props.selectedPost.tagline;
   const postHeroImg = props.selectedPost.imgHero;
-  const postPosterImg = props.selectedPost.imgPoster;
-  const postIcon = props.selectedPost.icon;
-  const postWrittenDate = props.selectedPost.writtenDate;
-  const postUpdatedDate = props.selectedPost.updatedDate;
-  const postAdCopy = props.selectedPost.adCopy;
+  // const postPosterImg = props.selectedPost.imgPoster;
+  // const postIcon = props.selectedPost.icon;
+  // const postWrittenDate = props.selectedPost.writtenDate;
+  // const postUpdatedDate = props.selectedPost.updatedDate;
+  // const postAdCopy = props.selectedPost.adCopy;
   const postTags = props.selectedPost.tags;
   const postSkillTags = props.selectedPost.skillTags;
   const postStackTags = props.selectedPost.stackTags;

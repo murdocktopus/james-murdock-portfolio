@@ -5,12 +5,13 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
+  // Redirect,
 } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage';
 import BlogPage from './pages/BlogPage/BlogPage';
 import PostPage from './pages/PostPage/PostPage';
+import TagPage from './pages/TagPage/TagPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import axios from 'axios';
@@ -21,16 +22,35 @@ class App extends Component {
     searchTerm: '',
     searchSubmitted: false,
     selectedBlogPost: {},
+    tagsAsPaths: [],
   };
 
   componentDidMount() {
-    // this.getBlogPostsGooglePrior();
     this.getPosts();
+    // this.getTagRoutes();
   }
 
   componentDidUpdate() {
+    if (this.state.tagsAsPaths === false) {
+      console.log(this.state.tagsAsPaths);
+      this.getTagRoutes();
+    }
     // console.log('App', 'this.state.allPosts:', this.state.allPosts);
   }
+
+  getTagRoutes = () => {
+    const allPosts = this.state.allPosts;
+    const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
+    const postTags1DArr = [].concat(...(postTags2DArr && postTags2DArr));
+    const postTagsFormatted =
+      postTags1DArr &&
+      postTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
+    const tagsAsPaths =
+      postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
+    this.setState({
+      tagsAsPaths: tagsAsPaths,
+    });
+  };
 
   getPosts = () => {
     axios
@@ -41,6 +61,7 @@ class App extends Component {
         this.setState({
           allPosts: allPosts,
         });
+        this.getTagRoutes();
       })
       .catch((err) => {
         console.log('error 1 catch', err);
@@ -82,6 +103,20 @@ class App extends Component {
   // };
 
   render() {
+    const allPosts = this.state.allPosts;
+    const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
+    const postTags1DArr = [].concat(...(postTags2DArr && postTags2DArr));
+    const postTagsFormatted =
+      postTags1DArr &&
+      postTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
+    const tagsAsPaths =
+      postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
+
+    // const allTags = this.state.tagsAsPaths;
+
+    // const postSkillTags = allPosts.map((post) => post.skillTags);
+    // const postStackTags = allPosts.map((post) => post.stackTags);
+
     return (
       <div className='App'>
         <Router>
@@ -93,8 +128,8 @@ class App extends Component {
             <Route path='/blog' exact>
               <BlogPage allPosts={this.state.allPosts} />
             </Route>
-            <Route path='/tag/design' exact>
-              <BlogPage allPosts={this.state.allPosts} />
+            <Route path={tagsAsPaths} exact>
+              <TagPage allPosts={this.state.allPosts} />
             </Route>
             <Route path='/scrollmate' exact>
               <PostPage allPosts={this.state.allPosts} />

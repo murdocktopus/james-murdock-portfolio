@@ -1,10 +1,10 @@
 import './PostFeed.scss';
-import { Link, Route, Redirect } from 'react-router-dom';
-import PostCardLarge from '../PostCardLarge/PostCardLarge';
+// import { Link, Route, Redirect } from 'react-router-dom';
+// import PostCardLarge from '../PostCardLarge/PostCardLarge';
 import PostCardFull from '../PostCardFull/PostCardFull';
 
 function PostFeed(props) {
-  console.log('PostFeed props.posts:', props.posts);
+  // console.log('PostFeed props.posts:', props && props.posts);
   return (
     <>
       <section className='post-feed-section'>
