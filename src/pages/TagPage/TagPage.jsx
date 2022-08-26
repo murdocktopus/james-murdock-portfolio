@@ -2,9 +2,21 @@ import './TagPage.scss';
 import { Component } from 'react';
 import PostFeed from '../../components/PostFeed/PostFeed';
 
-const addressTag =
-  window.location.pathname.slice(5).charAt(0).toUpperCase() +
-  window.location.pathname.slice(6);
+const addressTag = window.location.pathname
+  .slice(5)
+  .replace(/-/g, ' ')
+  .toLowerCase();
+
+function titleCase(str) {
+  var splitStr = str.toLowerCase().split(' ');
+  for (var i = 0; i < splitStr.length; i++) {
+    splitStr[i] =
+      splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+  }
+  return splitStr.join(' ');
+}
+
+// console.log(titleCase(addressTag));
 
 class TagPage extends Component {
   state = {
@@ -15,47 +27,43 @@ class TagPage extends Component {
   componentDidMount(props) {}
 
   componentDidUpdate(props) {
-    if (this.state.tag !== `${addressTag}`) {
+    if (this.state.tag.toLowerCase() !== `${addressTag}`) {
       this.getSetPosts();
     }
-
-    // console.log('TagPage State selectedPosts:', this.state.selectedPosts);
-
-    // console.log(
-    //   window.location.pathname.slice(5).charAt(0).toUpperCase() +
-    //     window.location.pathname.slice(6)
-    // );
+    console.log(this.state.tag);
   }
 
   getSetPosts = () => {
     const allPosts = this.props.allPosts;
-    const foundPosts = allPosts.filter(
-      (post) => post.tags.includes(`${addressTag}`) === true
+    const foundTagPosts = allPosts.filter(
+      (post) => post.tags.includes(`${titleCase(addressTag)}`) === true
     );
-    // console.log(foundPosts);
+    const foundSkillTagPosts = allPosts.filter(
+      (post) => post.skillTags.includes(`${titleCase(addressTag)}`) === true
+    );
+    const foundStackTagPosts = allPosts.filter(
+      (post) => post.stackTags.includes(`${titleCase(addressTag)}`) === true
+    );
+    const allTagPosts2DArr = foundTagPosts.concat(
+      foundSkillTagPosts,
+      foundStackTagPosts
+    );
+    const allTagPosts1DArr = [].concat(
+      ...(allTagPosts2DArr && allTagPosts2DArr)
+    );
+    const allTagsNoDuplicates = [...new Set(allTagPosts1DArr)];
+    console.log(allTagsNoDuplicates);
     this.setState({
-      selectedPosts: foundPosts,
-      tag: `${addressTag}`,
+      selectedPosts: allTagsNoDuplicates,
+      tag: `${titleCase(addressTag)}`,
     });
-
-    // const postTags = allPosts.tags;
-    // const postSkillTags = allPosts.skillTags;
-    // const postStackTags = allPosts.stackTags;
-    // const mergeTags =
-    //   postTags &&
-    //   postTags.concat(
-    //     postSkillTags && postSkillTags,
-    //     postStackTags && postStackTags
-    //   );
-    // const filteredPosts =
-    //   mergeTags && mergeTags.filter((tag) => tag === `${addressTag}`);
   };
 
   render(props) {
     return (
       <div className='blog-page'>
         <PostFeed
-          title={`${addressTag} Posts`}
+          title={`${titleCase(addressTag)} Posts`}
           posts={this.state.selectedPosts}
         />
       </div>

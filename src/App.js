@@ -21,8 +21,10 @@ class App extends Component {
     allPosts: [],
     searchTerm: '',
     searchSubmitted: false,
-    selectedBlogPost: {},
+    selectedPost: {},
     tagsAsPaths: [],
+    pagesAsPaths: [],
+    allTags: [],
   };
 
   componentDidMount() {
@@ -41,16 +43,55 @@ class App extends Component {
   getTagRoutes = () => {
     const allPosts = this.state.allPosts;
     const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
-    const postTags1DArr = [].concat(...(postTags2DArr && postTags2DArr));
+    const skillTags2DArr = allPosts && allPosts.map((post) => post.skillTags);
+    const stackTags2DArr = allPosts && allPosts.map((post) => post.stackTags);
+    const allTags2DArr = postTags2DArr.concat(skillTags2DArr, stackTags2DArr);
+    const allTags1DArr = [].concat(...(allTags2DArr && allTags2DArr));
     const postTagsFormatted =
-      postTags1DArr &&
-      postTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
+      allTags1DArr &&
+      allTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
+    this.setState({
+      allTags: postTagsFormatted,
+    });
     const tagsAsPaths =
       postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
     this.setState({
       tagsAsPaths: tagsAsPaths,
     });
   };
+
+  getSetPost = () => {
+    const foundPost = this.state.allPosts.find(
+      (post) => post.name === window.location.pathname.slice(1)
+    );
+    console.log('foundPost', foundPost);
+    this.setState({
+      selectedPost: foundPost,
+    });
+  };
+
+  getSetPages = () => {
+    const allPosts = this.state.allPosts;
+    const allPages2DArr =
+      allPosts &&
+      allPosts.map((post) => post.pageAndLink.map((page) => `/${page.page}`));
+
+    const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
+    const pagesAsPaths = [...new Set(allPages1DArr)];
+    this.setState({
+      pagesAsPaths: pagesAsPaths,
+    });
+    console.log(pagesAsPaths);
+  };
+
+  // getPostRoutes = () => {
+  //   const allPosts = this.state.allPosts;
+  //   const postNames2DArr = allPosts && allPosts.map((post) => post.name);
+  //   const allNames1DArr = [].concat(...(postNames2DArr && postNames2DArr));
+  //   this.setState({
+  //     selectedPost: postTagsFormatted,
+  //   });
+  // };
 
   getPosts = () => {
     axios
@@ -105,17 +146,29 @@ class App extends Component {
   render() {
     const allPosts = this.state.allPosts;
     const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
-    const postTags1DArr = [].concat(...(postTags2DArr && postTags2DArr));
+    const skillTags2DArr = allPosts && allPosts.map((post) => post.skillTags);
+    const stackTags2DArr = allPosts && allPosts.map((post) => post.stackTags);
+    const allTags2DArr = postTags2DArr.concat(skillTags2DArr, stackTags2DArr);
+    const allTags1DArr = [].concat(...(allTags2DArr && allTags2DArr));
     const postTagsFormatted =
-      postTags1DArr &&
-      postTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
+      allTags1DArr &&
+      allTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
+
     const tagsAsPaths =
       postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
 
-    // const allTags = this.state.tagsAsPaths;
+    const postsAsPaths = allPosts && allPosts.map((post) => `/${post.name}`);
 
-    // const postSkillTags = allPosts.map((post) => post.skillTags);
-    // const postStackTags = allPosts.map((post) => post.stackTags);
+    const allPages2DArr =
+      allPosts &&
+      allPosts.map((post) =>
+        post.pageAndLink.map((page) => `/pag/${page.page.toLowerCase()}`)
+      );
+
+    const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
+    const pagesAsPaths = [...new Set(allPages1DArr)];
+
+    console.log(pagesAsPaths);
 
     return (
       <div className='App'>
@@ -129,10 +182,24 @@ class App extends Component {
               <BlogPage allPosts={this.state.allPosts} />
             </Route>
             <Route path={tagsAsPaths} exact>
-              <TagPage allPosts={this.state.allPosts} />
+              <TagPage
+                allPosts={this.state.allPosts}
+                tagsAsPaths={this.state.tagsAsPaths}
+                allTags={this.state.allTags}
+              />
             </Route>
-            <Route path='/scrollmate' exact>
-              <PostPage allPosts={this.state.allPosts} />
+            <Route path={pagesAsPaths} exact>
+              <TagPage
+                allPosts={this.state.allPosts}
+                tagsAsPaths={this.state.pagesAsPaths}
+                allTags={this.state.allTags}
+              />
+            </Route>
+            <Route path={postsAsPaths} exact>
+              <PostPage
+                selectedPost={this.state.selectedPost}
+                getSetPost={this.getSetPost}
+              />
             </Route>
           </Switch>
           <Footer />

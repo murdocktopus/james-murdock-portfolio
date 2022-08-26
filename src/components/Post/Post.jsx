@@ -138,7 +138,7 @@ function Post(props) {
           <div className='post-page-link-container'>
             {postPageAndLink &&
               postPageAndLink.map((object) => {
-                console.log(object);
+                // console.log(object);
                 return (
                   <p
                     className='post-page-chip post-page-chip--page-tags'
@@ -165,7 +165,7 @@ function Post(props) {
           <div className='post-skill-tags'>
             {shownSkillTags &&
               shownSkillTags.map((tag) => {
-                console.log(tag);
+                // console.log(tag);
                 return (
                   <p
                     className='post-page-chip post-page-chip--skill-tags'
@@ -184,7 +184,7 @@ function Post(props) {
           <div className='post-tags__tags'>
             {postTags &&
               postTags.map((tag) => {
-                console.log(tag);
+                // console.log(tag);
                 return (
                   <p
                     className='post-page-chip post-page-chip--tags'
@@ -196,7 +196,7 @@ function Post(props) {
               })}
             {postSkillTags &&
               postSkillTags.map((tag) => {
-                console.log(tag);
+                // console.log(tag);
                 return (
                   <p
                     className='post-page-chip post-page-chip--skill-tags'
@@ -208,7 +208,7 @@ function Post(props) {
               })}
             {postStackTags &&
               postStackTags.map((tag) => {
-                console.log(tag);
+                // console.log(tag);
                 return (
                   <p
                     className='post-page-chip post-page-chip--stack-tags'
