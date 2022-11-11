@@ -1,8 +1,8 @@
-import './PostPage.scss';
+import './BlogPostPage.scss';
 import { Component } from 'react';
 import Post from '../../components/Post/Post';
 
-class PostPage extends Component {
+class BlogPostPage extends Component {
   componentDidMount() {}
 
   componentDidUpdate() {
@@ -19,4 +19,4 @@ class PostPage extends Component {
     );
   }
 }
-export default PostPage;
+export default BlogPostPage;

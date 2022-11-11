@@ -8,11 +8,12 @@ function PostCardSmall(props) {
       <div className='post-card-small'>
         <img
           className='post-card-small__img'
-          src={posterImg}
+          src={`${process.env.REACT_APP_API_URL}${props.imgPoster}`}
           alt='Post_Image'
         />
         <p className='post-card-small__title'>
-          Top 10: My Favourite Movies of All Time
+          <span className='post-card-large__title'>{props.title}:</span>{' '}
+          <span className='post-card-large__subtitle'>{props.tagline}</span>{' '}
         </p>
       </div>
     </>

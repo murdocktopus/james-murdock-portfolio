@@ -1,13 +1,13 @@
-import './BlogPage.scss';
+import './BlogFeedPage.scss';
 // import { Component } from 'react';
 import PostFeed from '../../components/PostFeed/PostFeed';
 
-function BlogPage(props) {
-  console.log('BlogPage props.allPosts:', props.allPosts);
+function BlogFeedPage(props) {
+  console.log('BlogFeedPage props.allPosts:', props.allPosts);
   return (
     <div className='blog-page'>
       <PostFeed title='Blog' posts={props.allPosts} />
     </div>
   );
 }
-export default BlogPage;
+export default BlogFeedPage;

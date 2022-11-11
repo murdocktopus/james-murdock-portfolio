@@ -1,5 +1,5 @@
 // PostFeed.scss
-@use "../../styles/global" as *;
+@use '../../styles/global' as *;
 
 .post-feed {
   @include margin;
@@ -9,7 +9,8 @@
     color: $color-primary-accent;
     text-align: left;
     @include subheader;
-    margin: 3rem 0 1rem 0;
+    margin-top: 4rem;
+    padding: 0.5rem 0 0.25rem 0;
   }
 
   &__list-container {
@@ -19,7 +20,12 @@
     flex-wrap: nowrap;
 
     @include bp-tablet {
-      //   width: fit-content;
+      // height: fit-content;
+    }
+
+    @include bp-laptop {
+      @include display-flex(row, space-between, flex-start);
+      gap: 2rem;
     }
 
     @include bp-desktop {

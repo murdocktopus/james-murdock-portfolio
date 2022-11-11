@@ -121,6 +121,11 @@
     text-align: left;
     margin: 1rem;
     initial-letter: 2;
+    display: none;
+
+    @include bp-tablet {
+      display: inline-block;
+    }
   }
 
   &__media-container {

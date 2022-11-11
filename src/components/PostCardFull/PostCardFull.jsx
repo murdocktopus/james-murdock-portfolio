@@ -21,13 +21,20 @@ function PostCardFull(props) {
           />
         </div>
         <div className='post-card-full__text-container'>
-          <p className='post-card-full__title'>{props.title}</p>
-          <p className='post-card-full__text'>{props.subtitle}</p>
-          {/* <p className='post-card-full__text'>{props.tags}</p> */}
           <p className='post-card-full__text'>
-            {props.content.p && props.content.p.slice(0, 1)}&#8230;&#91;Read
-            More&#93;
+            <span className='post-card-full__title'>{props.title}:</span>{' '}
+            <span className='post-card-full__subtitle'>{props.tagline}</span>{' '}
+            <span className='post-card-full__subtitle'>
+              &#40;{props.subtitle}&#41;
+            </span>
           </p>
+          {/* <p className='post-card-full__text'>{props.subtitle}</p> */}
+          {/* <p className='post-card-full__text'>{props.tags}</p> */}
+          <div className='post-card-full__text2'>
+            {parse(`${props.content && props.content.slice(0, 1)}`)}
+            &#8230;&#91;Read More&#93;
+            {/* <p className='post-card-full__text'>&#8230;&#91;Read More&#93;</p> */}
+          </div>
         </div>
       </div>
     </>

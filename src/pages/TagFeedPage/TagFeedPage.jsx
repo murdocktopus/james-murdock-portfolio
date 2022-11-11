@@ -1,4 +1,4 @@
-import './TagPage.scss';
+import './TagFeedPage.scss';
 import { Component } from 'react';
 import PostFeed from '../../components/PostFeed/PostFeed';
 
@@ -18,7 +18,7 @@ function titleCase(str) {
 
 // console.log(titleCase(addressTag));
 
-class TagPage extends Component {
+class TagFeedPage extends Component {
   state = {
     selectedPosts: [],
     tag: '',
@@ -71,4 +71,4 @@ class TagPage extends Component {
   }
 }
 
-export default TagPage;
+export default TagFeedPage;

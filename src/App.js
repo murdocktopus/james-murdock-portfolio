@@ -9,9 +9,9 @@ import {
 } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage';
-import BlogPage from './pages/BlogPage/BlogPage';
-import PostPage from './pages/PostPage/PostPage';
-import TagPage from './pages/TagPage/TagPage';
+import BlogFeedPage from './pages/BlogFeedPage/BlogFeedPage';
+import BlogPostPage from './pages/BlogPostPage/BlogPostPage';
+import TagFeedPage from './pages/TagFeedPage/TagFeedPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import axios from 'axios';
@@ -124,25 +124,6 @@ class App extends Component {
   //   e.target.reset();
   // };
 
-  // getBlogPostsGooglePrior = () => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_API_URL}/${this.state.searchTerm}`)
-  //     .then((response) => {
-  //       this.setState(
-  //         {
-  //           blogPosts: response.data.items,
-  //           searchSubmitted: false,
-  //         },
-  //         () => {
-  //           console.log(this.state);
-  //         }
-  //       );
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   render() {
     const allPosts = this.state.allPosts;
     const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
@@ -179,24 +160,24 @@ class App extends Component {
               <HomePage allPosts={this.state.allPosts} />
             </Route>
             <Route path='/blog' exact>
-              <BlogPage allPosts={this.state.allPosts} />
+              <BlogFeedPage allPosts={this.state.allPosts} />
             </Route>
             <Route path={tagsAsPaths} exact>
-              <TagPage
+              <TagFeedPage
                 allPosts={this.state.allPosts}
                 tagsAsPaths={this.state.tagsAsPaths}
                 allTags={this.state.allTags}
               />
             </Route>
             <Route path={pagesAsPaths} exact>
-              <TagPage
+              <TagFeedPage
                 allPosts={this.state.allPosts}
                 tagsAsPaths={this.state.pagesAsPaths}
                 allTags={this.state.allTags}
               />
             </Route>
             <Route path={postsAsPaths} exact>
-              <PostPage
+              <BlogPostPage
                 selectedPost={this.state.selectedPost}
                 getSetPost={this.getSetPost}
               />
