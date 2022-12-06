@@ -56,24 +56,26 @@ function Post(props) {
   // const postId = props.selectedPost.id;
   // const postName = props.selectedPost.name;
   // const postSelfLink = props.selectedPost.selfLink;
-  const postTitle = props.selectedPost.title;
+  const postTitle = props.selectedPost && props.selectedPost.title;
   // const postSubtitle = props.selectedPost.subtitle;
-  const postTagline = props.selectedPost.tagline;
-  const postHeroImg = props.selectedPost.imgHero;
+  const postTagline = props.selectedPost && props.selectedPost.tagline;
+  const postHeroImg = props.selectedPost && props.selectedPost.imgHero;
   // const postPosterImg = props.selectedPost.imgPoster;
   // const postIcon = props.selectedPost.icon;
   // const postWrittenDate = props.selectedPost.writtenDate;
   // const postUpdatedDate = props.selectedPost.updatedDate;
   // const postAdCopy = props.selectedPost.adCopy;
-  const postTags = props.selectedPost.tags;
-  const postSkillTags = props.selectedPost.skillTags;
-  const postStackTags = props.selectedPost.stackTags;
-  const postPageAndLink = props.selectedPost.pageAndLink;
+  const postTags = props.selectedPost && props.selectedPost.tags;
+  const postSkillTags = props.selectedPost && props.selectedPost.skillTags;
+  const postStackTags = props.selectedPost && props.selectedPost.stackTags;
+  const postPageAndLink = props.selectedPost && props.selectedPost.pageAndLink;
   const postPublishedDate = new Date(
     props.selectedPost && props.selectedPost.publishedDate
   );
   const postContent =
-    props.selectedPost.content && parse(props.selectedPost.content.join(' '));
+    props.selectedPost &&
+    props.selectedPost.content &&
+    parse(props.selectedPost.content.join(' '));
 
   // DATE FORMAT CONVERSION FORMULA VARIABLES
   const postPublishedMonth = months[postPublishedDate.getMonth()];

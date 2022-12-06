@@ -3,6 +3,8 @@ import { Link, Route, Redirect } from 'react-router-dom';
 import PostCardSmall from '../PostCardSmall/PostCardSmall';
 
 function PostPlaylistSmall(props) {
+  // const displayedPosts = props.posts && props.posts.filter(post => );
+
   return (
     <>
       <section className='post-playlist-small-section'>

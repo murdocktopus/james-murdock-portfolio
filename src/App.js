@@ -4,7 +4,8 @@ import { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch,
+  Routes,
+  Link,
   // Redirect,
 } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ import HomePage from './pages/HomePage/HomePage';
 import BlogFeedPage from './pages/BlogFeedPage/BlogFeedPage';
 import BlogPostPage from './pages/BlogPostPage/BlogPostPage';
 import TagFeedPage from './pages/TagFeedPage/TagFeedPage';
+import PortfolioFeedPage from './pages/PortfolioFeedPage/PortfolioFeedPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import axios from 'axios';
@@ -138,51 +140,148 @@ class App extends Component {
     const tagsAsPaths =
       postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
 
+    const tagsAsRoutes =
+      postTagsFormatted &&
+      postTagsFormatted.map((tag) => (
+        <Route
+          path={`/tag/${tag}`}
+          element={
+            <TagFeedPage
+              allPosts={this.state.allPosts}
+              tagsAsPaths={this.state.tagsAsPaths}
+              allTags={this.state.allTags}
+            />
+          }
+        />
+      ));
+
     const postsAsPaths = allPosts && allPosts.map((post) => `/${post.name}`);
-
-    const allPages2DArr =
+    const postsAsRoutes =
       allPosts &&
-      allPosts.map((post) =>
-        post.pageAndLink.map((page) => `/pag/${page.page.toLowerCase()}`)
-      );
+      allPosts.map((post) => (
+        <Route
+          path={`/${post.name}`}
+          element={
+            <BlogPostPage
+              selectedPost={this.state.selectedPost}
+              getSetPost={this.getSetPost}
+            />
+          }
+        />
+      ));
 
-    const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
-    const pagesAsPaths = [...new Set(allPages1DArr)];
+    // const allPages2DArr =
+    //   allPosts &&
+    //   allPosts.map((post) =>
+    //     post.pageAndLink.map((page) => `/pag/${page.page.toLowerCase()}`)
+    //   );
 
-    console.log(pagesAsPaths);
+    // const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
+    // const pagesAsPaths = [...new Set(allPages1DArr)];
+
+    // const pagesAsRoutes = (
+    //   <Route
+    //     path={`${pagesAsPaths}`}
+    //     element={
+    //       <TagFeedPage
+    //         allPosts={this.state.allPosts}
+    //         tagsAsPaths={this.state.pagesAsPaths}
+    //         allTags={this.state.allTags}
+    //       />
+    //     }
+    //   />
+    // );
+
+    // console.log(pagesAsPaths);
 
     return (
       <div className='App'>
         <Router>
           <Header />
-          <Switch>
-            <Route path='/' exact>
-              <HomePage allPosts={this.state.allPosts} />
-            </Route>
-            <Route path='/blog' exact>
-              <BlogFeedPage allPosts={this.state.allPosts} />
-            </Route>
-            <Route path={tagsAsPaths} exact>
-              <TagFeedPage
-                allPosts={this.state.allPosts}
-                tagsAsPaths={this.state.tagsAsPaths}
-                allTags={this.state.allTags}
-              />
-            </Route>
-            <Route path={pagesAsPaths} exact>
-              <TagFeedPage
-                allPosts={this.state.allPosts}
-                tagsAsPaths={this.state.pagesAsPaths}
-                allTags={this.state.allTags}
-              />
-            </Route>
-            <Route path={postsAsPaths} exact>
-              <BlogPostPage
-                selectedPost={this.state.selectedPost}
-                getSetPost={this.getSetPost}
-              />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route
+              path='/'
+              element={<HomePage allPosts={this.state.allPosts} />}
+            />
+            <Route
+              path='/blog'
+              element={<BlogFeedPage allPosts={this.state.allPosts} />}
+            />
+            <Route
+              path='/portfolio'
+              element={<PortfolioFeedPage allPosts={this.state.allPosts} />}
+            />
+            {postTagsFormatted &&
+              postTagsFormatted.map((tag) => (
+                <Route
+                  key={tag}
+                  path={`/tag/${tag}`}
+                  element={
+                    <TagFeedPage
+                      allPosts={this.state.allPosts}
+                      tagsAsPaths={this.state.tagsAsPaths}
+                      allTags={this.state.allTags}
+                    />
+                  }
+                />
+              ))}
+            {/* {pagesAsPaths &&
+              pagesAsPaths.map((page) => (
+                <Route
+                  key={page}
+                  path={`/${page}`}
+                  element={
+                    <TagFeedPage
+                      allPosts={this.state.allPosts}
+                      tagsAsPaths={this.state.pagesAsPaths}
+                      allTags={this.state.allTags}
+                    />
+                  }
+                />
+              ))} */}
+            {allPosts &&
+              allPosts.map((post) => (
+                <Route
+                  key={post.name}
+                  path={`${post.name}`}
+                  element={
+                    <BlogPostPage
+                      selectedPost={this.state.selectedPost}
+                      getSetPost={this.getSetPost}
+                    />
+                  }
+                />
+              ))}
+            {/* <Route
+              path={`${tagsAsPaths}`}
+              element={
+                <TagFeedPage
+                  allPosts={this.state.allPosts}
+                  tagsAsPaths={this.state.tagsAsPaths}
+                  allTags={this.state.allTags}
+                />
+              }
+            />
+            <Route
+              path={`${pagesAsPaths}`}
+              element={
+                <TagFeedPage
+                  allPosts={this.state.allPosts}
+                  tagsAsPaths={this.state.pagesAsPaths}
+                  allTags={this.state.allTags}
+                />
+              }
+            />
+            <Route
+              path={`${postsAsPaths}`}
+              element={
+                <BlogPostPage
+                  selectedPost={this.state.selectedPost}
+                  getSetPost={this.getSetPost}
+                />
+              }
+            /> */}
+          </Routes>
           <Footer />
         </Router>
       </div>

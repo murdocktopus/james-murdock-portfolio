@@ -6,7 +6,10 @@ class BlogPostPage extends Component {
   componentDidMount() {}
 
   componentDidUpdate() {
-    if (this.props.selectedPost.name !== window.location.pathname.slice(1)) {
+    if (
+      this.props.selectedPost &&
+      this.props.selectedPost.name !== window.location.pathname.slice(1)
+    ) {
       this.props.getSetPost();
     }
   }
