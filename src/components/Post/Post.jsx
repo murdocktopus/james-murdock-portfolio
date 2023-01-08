@@ -124,7 +124,7 @@ function Post(props) {
 
   // const displayedMedia =
   //   contentArr && contentArr.splice(mediaSplicePosition, 0, dangerousPostMedia);
-
+  window.scrollTo(0, 0);
   return (
     <>
       <div className='post'>

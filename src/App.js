@@ -21,28 +21,84 @@ import axios from 'axios';
 class App extends Component {
   state = {
     allPosts: [],
-    searchTerm: '',
-    searchSubmitted: false,
+    allTags: [],
+    heroPosts: [],
     selectedPost: {},
     tagsAsPaths: [],
-    pagesAsPaths: [],
-    allTags: [],
+
+    // pagesAsPaths: [],
+    // searchTerm: '',
+    // searchSubmitted: false,
   };
+
+  //
+  //
+  //
+  // Component Lifecycle Events (Below)
+  //
+  //
+  //
 
   componentDidMount() {
     this.getPosts();
-    // this.getTagRoutes();
+    // this.getSetTagsAndTagRoutes();
   }
 
   componentDidUpdate() {
     if (this.state.tagsAsPaths === false) {
       console.log(this.state.tagsAsPaths);
-      this.getTagRoutes();
+      this.getSetTagsAndTagRoutes();
     }
-    // console.log('App', 'this.state.allPosts:', this.state.allPosts);
+    // console.log('App', 'this.state.heroPosts:', this.state.heroPosts);
   }
 
-  getTagRoutes = () => {
+  //
+  //
+  //
+  // "Executive" Functions (Below)
+  //
+  //
+  //
+
+  // Immediate Functions (with Axios Request)
+  //
+  //
+
+  getPosts = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/blog-posts`)
+      .then((response) => {
+        // console.log('All Posts in API', response.data);
+        let allPosts = response.data;
+        this.setState({
+          allPosts: allPosts,
+        });
+        this.getSetTagsAndTagRoutes();
+        this.getSetHeroPosts();
+      })
+      .catch((err) => {
+        console.log('error 1 catch', err);
+      });
+  };
+
+  getSetHeroPosts = () => {
+    const allPosts = this.state.allPosts;
+    const heroPosts = [
+      allPosts.find((posts) => posts.hero === 1),
+      allPosts.find((posts) => posts.hero === 2),
+      allPosts.find((posts) => posts.hero === 3),
+      allPosts.find((posts) => posts.hero === 1),
+    ];
+    this.setState({
+      heroPosts: heroPosts,
+    });
+    // console.log(`heroposts`, heroPosts);
+  };
+
+  getSetTagsAndTagRoutes = () => {
+    // This Function takes all the different types of tags (tags, stack tags, skill tags)
+    // and puts them into a single array, replaces capital letters and hyphens,
+    // and sets the array as the state for allTags and tagsAsPaths (w/ ((tag) => `/tag/${tag}`))
     const allPosts = this.state.allPosts;
     const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
     const skillTags2DArr = allPosts && allPosts.map((post) => post.skillTags);
@@ -62,9 +118,14 @@ class App extends Component {
     });
   };
 
+  // Secondary Exec Functions w/
+  //
+  //
+
   getSetPost = () => {
+    // Finds the post thats name matches the URL and sets State as selectedPost
     const foundPost = this.state.allPosts.find(
-      (post) => post.name === window.location.pathname.slice(1)
+      (post) => post.name === window.location.pathname.slice(6)
     );
     console.log('foundPost', foundPost);
     this.setState({
@@ -72,44 +133,19 @@ class App extends Component {
     });
   };
 
-  getSetPages = () => {
-    const allPosts = this.state.allPosts;
-    const allPages2DArr =
-      allPosts &&
-      allPosts.map((post) => post.pageAndLink.map((page) => `/${page.page}`));
-
-    const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
-    const pagesAsPaths = [...new Set(allPages1DArr)];
-    this.setState({
-      pagesAsPaths: pagesAsPaths,
-    });
-    console.log(pagesAsPaths);
-  };
-
-  // getPostRoutes = () => {
+  // getSetPages = () => {
   //   const allPosts = this.state.allPosts;
-  //   const postNames2DArr = allPosts && allPosts.map((post) => post.name);
-  //   const allNames1DArr = [].concat(...(postNames2DArr && postNames2DArr));
-  //   this.setState({
-  //     selectedPost: postTagsFormatted,
-  //   });
-  // };
+  //   const allPages2DArr =
+  //     allPosts &&
+  //     allPosts.map((post) => post.pageAndLink.map((page) => `/${page.page}`));
 
-  getPosts = () => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/blog-posts`)
-      .then((response) => {
-        // console.log('All Posts in API', response.data);
-        let allPosts = response.data;
-        this.setState({
-          allPosts: allPosts,
-        });
-        this.getTagRoutes();
-      })
-      .catch((err) => {
-        console.log('error 1 catch', err);
-      });
-  };
+  //   const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
+  //   const pagesAsPaths = [...new Set(allPages1DArr)];
+  //   this.setState({
+  //     pagesAsPaths: pagesAsPaths,
+  //   });
+  //   console.log(pagesAsPaths);
+  // };
 
   // handleSubmit = (e) => {
   //   e.preventDefault();
@@ -137,62 +173,38 @@ class App extends Component {
       allTags1DArr &&
       allTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
 
-    const tagsAsPaths =
-      postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
+    // const tagsAsPaths =
+    //   postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
 
-    const tagsAsRoutes =
-      postTagsFormatted &&
-      postTagsFormatted.map((tag) => (
-        <Route
-          path={`/tag/${tag}`}
-          element={
-            <TagFeedPage
-              allPosts={this.state.allPosts}
-              tagsAsPaths={this.state.tagsAsPaths}
-              allTags={this.state.allTags}
-            />
-          }
-        />
-      ));
+    // const tagsAsRoutes =
+    //   postTagsFormatted &&
+    //   postTagsFormatted.map((tag) => (
+    //     <Route
+    //       path={`/tag/${tag}`}
+    //       element={
+    //         <TagFeedPage
+    //           allPosts={this.state.allPosts}
+    //           tagsAsPaths={this.state.tagsAsPaths}
+    //           allTags={this.state.allTags}
+    //         />
+    //       }
+    //     />
+    //   ));
 
-    const postsAsPaths = allPosts && allPosts.map((post) => `/${post.name}`);
-    const postsAsRoutes =
-      allPosts &&
-      allPosts.map((post) => (
-        <Route
-          path={`/${post.name}`}
-          element={
-            <BlogPostPage
-              selectedPost={this.state.selectedPost}
-              getSetPost={this.getSetPost}
-            />
-          }
-        />
-      ));
-
-    // const allPages2DArr =
+    // const postsAsPaths = allPosts && allPosts.map((post) => `/${post.name}`);
+    // const postsAsRoutes =
     //   allPosts &&
-    //   allPosts.map((post) =>
-    //     post.pageAndLink.map((page) => `/pag/${page.page.toLowerCase()}`)
-    //   );
-
-    // const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
-    // const pagesAsPaths = [...new Set(allPages1DArr)];
-
-    // const pagesAsRoutes = (
-    //   <Route
-    //     path={`${pagesAsPaths}`}
-    //     element={
-    //       <TagFeedPage
-    //         allPosts={this.state.allPosts}
-    //         tagsAsPaths={this.state.pagesAsPaths}
-    //         allTags={this.state.allTags}
-    //       />
-    //     }
-    //   />
-    // );
-
-    // console.log(pagesAsPaths);
+    //   allPosts.map((post) => (
+    //     <Route
+    //       path={`/${post.name}`}
+    //       element={
+    //         <BlogPostPage
+    //           selectedPost={this.state.selectedPost}
+    //           getSetPost={this.getSetPost}
+    //         />
+    //       }
+    //     />
+    //   ));
 
     return (
       <div className='App'>
@@ -201,7 +213,12 @@ class App extends Component {
           <Routes>
             <Route
               path='/'
-              element={<HomePage allPosts={this.state.allPosts} />}
+              element={
+                <HomePage
+                  allPosts={this.state.allPosts}
+                  heroPosts={this.state.heroPosts}
+                />
+              }
             />
             <Route
               path='/blog'
@@ -225,25 +242,11 @@ class App extends Component {
                   }
                 />
               ))}
-            {/* {pagesAsPaths &&
-              pagesAsPaths.map((page) => (
-                <Route
-                  key={page}
-                  path={`/${page}`}
-                  element={
-                    <TagFeedPage
-                      allPosts={this.state.allPosts}
-                      tagsAsPaths={this.state.pagesAsPaths}
-                      allTags={this.state.allTags}
-                    />
-                  }
-                />
-              ))} */}
             {allPosts &&
               allPosts.map((post) => (
                 <Route
-                  key={post.name}
-                  path={`${post.name}`}
+                  key={post.id}
+                  path={`post/:${post.name}`}
                   element={
                     <BlogPostPage
                       selectedPost={this.state.selectedPost}
@@ -252,35 +255,6 @@ class App extends Component {
                   }
                 />
               ))}
-            {/* <Route
-              path={`${tagsAsPaths}`}
-              element={
-                <TagFeedPage
-                  allPosts={this.state.allPosts}
-                  tagsAsPaths={this.state.tagsAsPaths}
-                  allTags={this.state.allTags}
-                />
-              }
-            />
-            <Route
-              path={`${pagesAsPaths}`}
-              element={
-                <TagFeedPage
-                  allPosts={this.state.allPosts}
-                  tagsAsPaths={this.state.pagesAsPaths}
-                  allTags={this.state.allTags}
-                />
-              }
-            />
-            <Route
-              path={`${postsAsPaths}`}
-              element={
-                <BlogPostPage
-                  selectedPost={this.state.selectedPost}
-                  getSetPost={this.getSetPost}
-                />
-              }
-            /> */}
           </Routes>
           <Footer />
         </Router>

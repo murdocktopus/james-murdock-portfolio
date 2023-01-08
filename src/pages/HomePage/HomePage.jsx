@@ -7,9 +7,9 @@ import PostPlaylistSmall from '../../components/PostPlaylistSmall/PostPlaylistSm
 function HomePage(props) {
   return (
     <div className='home-page'>
-      <Hero />
-      <PostPlaylistLarge title='Featured' posts={props.allPosts} />
-      <PostPlaylistSmall title='Blog' posts={props.allPosts} />
+      <Hero posts={props.heroPosts} />
+      {/* <PostPlaylistLarge title='Featured' posts={props.allPosts} />
+      <PostPlaylistSmall title='Blog' posts={props.allPosts} /> */}
       <PostPlaylistSmall title='Projects' posts={props.allPosts} />
     </div>
   );

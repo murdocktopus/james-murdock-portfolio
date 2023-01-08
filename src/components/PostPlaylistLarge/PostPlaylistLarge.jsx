@@ -12,27 +12,28 @@ function PostPlaylistLarge(props) {
             {props.posts &&
               props.posts.map((post) => {
                 return (
-                  <PostCardLarge
-                    key={post.id}
-                    id={post.id}
-                    name={post.name}
-                    selfLink={post.selfLink}
-                    title={post.title}
-                    subtitle={post.subtitle}
-                    tagline={post.tagline}
-                    imgHero={post.imgHero}
-                    imgPoster={post.imgPoster}
-                    icon={post.icon}
-                    writtenDate={post.writtenDate}
-                    publishedDate={post.publishedDate}
-                    updatedDate={post.updatedDate}
-                    adCopy={post.adCopy}
-                    categoryTags={post.categoryTags}
-                    skillTags={post.skillTags}
-                    stackTags={post.stackTags}
-                    pageAndLink={post.pageAndLink}
-                    content={post.content}
-                  />
+                  <Link to={post.selfLink} key={post.id}>
+                    <PostCardLarge
+                      key={post.id}
+                      id={post.id}
+                      name={post.name}
+                      selfLink={post.selfLink}
+                      title={post.title}
+                      subtitle={post.subtitle}
+                      tagline={post.tagline}
+                      imgHero={post.imgHero}
+                      imgPoster={post.imgPoster}
+                      icon={post.icon}
+                      writtenDate={post.writtenDate}
+                      publishedDate={post.publishedDate}
+                      updatedDate={post.updatedDate}
+                      adCopy={post.adCopy}
+                      categoryTags={post.categoryTags}
+                      skillTags={post.skillTags}
+                      stackTags={post.stackTags}
+                      content={post.content}
+                    />
+                  </Link>
                 );
               })}
           </div>
