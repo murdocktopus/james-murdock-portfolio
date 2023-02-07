@@ -17,6 +17,7 @@ import PortfolioFeedPage from './pages/PortfolioFeedPage/PortfolioFeedPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import axios from 'axios';
+import MenuModal from './components/MenuModal/MenuModal';
 
 class App extends Component {
   state = {
@@ -165,8 +166,11 @@ class App extends Component {
   render() {
     const allPosts = this.state.allPosts;
     const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
+    const postTags1DArr = [].concat(...(postTags2DArr && postTags2DArr));
     const skillTags2DArr = allPosts && allPosts.map((post) => post.skillTags);
+    const skillTags1DArr = [].concat(...(skillTags2DArr && skillTags2DArr));
     const stackTags2DArr = allPosts && allPosts.map((post) => post.stackTags);
+    const stackTags1DArr = [].concat(...(stackTags2DArr && stackTags2DArr));
     const allTags2DArr = postTags2DArr.concat(skillTags2DArr, stackTags2DArr);
     const allTags1DArr = [].concat(...(allTags2DArr && allTags2DArr));
     const postTagsFormatted =
@@ -210,6 +214,12 @@ class App extends Component {
       <div className='App'>
         <Router>
           <Header />
+          <MenuModal
+            allTags={this.state.allTags}
+            postTagsFormatted={postTagsFormatted}
+            allTags1DArr={allTags1DArr}
+            postTags1DArr={postTags1DArr}
+          />
           <Routes>
             <Route
               path='/'

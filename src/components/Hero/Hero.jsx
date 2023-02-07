@@ -12,7 +12,7 @@ function Hero(props) {
   const heroPost1HeroImg = heroPost1 && heroPost1.imgHero;
   const heroPost1PosterImg = heroPost1 && heroPost1.imgPoster;
   const heroPost1Icon = <FiAward className='hero-card__icon' />;
-  console.log(<FiAward />);
+  // console.log(<FiAward />);
 
   const heroPost2 = props && props.posts[1];
   const heroPost2HeroImg = heroPost2 && heroPost2.imgHero;

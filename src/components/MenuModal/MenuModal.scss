@@ -1,0 +1,21 @@
+// MenuModal.scss
+
+@use '../../styles/global' as *;
+
+.menu-modal-background {
+  @include display-flex(row, flex-start, flex-start);
+  background-color: black;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 4rem;
+  z-index: 11;
+  position: fixed;
+}
+
+.menu-modal-container {
+  padding: 1rem;
+}
+
+.menu-modal-header {
+}

@@ -2,6 +2,7 @@ import './Header.scss';
 import { Link, Route, Redirect } from 'react-router-dom';
 import { CgMenu, CgSearch, CgProfile } from 'react-icons/cg';
 import { FaLaptopCode, FaBlog, FaSearch } from 'react-icons/fa';
+import MenuModal from '../MenuModal/MenuModal';
 
 function Header(props) {
   return (
@@ -53,6 +54,7 @@ function Header(props) {
           </Link>
         </div>
       </header>
+      {/* <MenuModal />4 */}
     </>
   );
 }
