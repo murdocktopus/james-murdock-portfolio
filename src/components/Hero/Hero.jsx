@@ -1,28 +1,24 @@
 import './Hero.scss';
+import { useState, useEffect } from 'react';
 import { FiAward, FiBook } from 'react-icons/fi';
 import { CgSearch, CgChevronRight } from 'react-icons/cg';
 import highlightImg from '../../assets/images/Forrest_Gump_poster.jpg';
 
 function Hero(props) {
-  // let heroPosts = props.posts.filter((post) => (post.playlists.hero = 4));
-
-  // console.log(`hero posts:`, heroPosts);
-
-  const heroPost1 = props && props.posts[0];
+  const heroPost1 = props.heroPosts && props.heroPosts[0];
   const heroPost1HeroImg = heroPost1 && heroPost1.imgHero;
   const heroPost1PosterImg = heroPost1 && heroPost1.imgPoster;
   const heroPost1Icon = <FiAward className='hero-card__icon' />;
-  // console.log(<FiAward />);
 
-  const heroPost2 = props && props.posts[1];
+  const heroPost2 = props.heroPosts && props.heroPosts[1];
   const heroPost2HeroImg = heroPost2 && heroPost2.imgHero;
   const heroPost2PosterImg = heroPost2 && heroPost2.imgPoster;
 
-  const heroPost3 = props && props.posts[2];
+  const heroPost3 = props.heroPosts && props.heroPosts[2];
   const heroPost3HeroImg = heroPost3 && heroPost3.imgHero;
   const heroPost3PosterImg = heroPost3 && heroPost3.imgPoster;
 
-  const heroPost4 = props && props.posts[3];
+  const heroPost4 = props.heroPosts && props.heroPosts[3];
   const heroPost4HeroImg = heroPost4 && heroPost4.imgHero;
   const heroPost4PosterImg = heroPost4 && heroPost4.imgPoster;
 

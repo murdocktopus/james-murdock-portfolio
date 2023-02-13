@@ -32,47 +32,36 @@ function App() {
       .get(`${process.env.REACT_APP_API_URL}/blog-posts`)
       .then((response) => {
         setAllPosts(response.data);
+        setHeroPosts([
+          response.data.find((posts) => posts.hero === 1),
+          response.data.find((posts) => posts.hero === 2),
+          response.data.find((posts) => posts.hero === 3),
+          response.data.find((posts) => posts.hero === 1),
+        ]);
+        const postTags2DArr = response.data.map((post) => post.tags);
+        const skillTags2DArr = response.data.map((post) => post.skillTags);
+        const stackTags2DArr = response.data.map((post) => post.stackTags);
+        const allTags2DArr = postTags2DArr.concat(
+          skillTags2DArr,
+          stackTags2DArr
+        );
+        const allTags1DArr = [].concat(...(allTags2DArr && allTags2DArr));
+        const postTagsFormatted =
+          allTags1DArr &&
+          allTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
+        setAllTags(postTagsFormatted);
+        const tagsAsPaths =
+          postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
+        setTagsAsPaths(tagsAsPaths);
+        const foundPost = response.data.find(
+          (post) => post.name === window.location.pathname.slice(6)
+        );
+        // console.log('foundPost', foundPost);
+        setSelectedPost(foundPost);
       })
       .catch((err) => {
         console.log('error 1 catch', err);
       });
-  }, []);
-
-  useEffect(() => {
-    const heroPosts = [
-      allPosts.find((posts) => posts.hero === 1),
-      allPosts.find((posts) => posts.hero === 2),
-      allPosts.find((posts) => posts.hero === 3),
-      allPosts.find((posts) => posts.hero === 1),
-    ];
-    setHeroPosts(heroPosts);
-  }, []);
-
-  useEffect(() => {
-    // This Function takes all the different types of tags (tags, stack tags, skill tags)
-    // and puts them into a single array, replaces capital letters and hyphens,
-    // and sets the array as the state for allTags and tagsAsPaths (w/ ((tag) => `/tag/${tag}`))
-    const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
-    const skillTags2DArr = allPosts && allPosts.map((post) => post.skillTags);
-    const stackTags2DArr = allPosts && allPosts.map((post) => post.stackTags);
-    const allTags2DArr = postTags2DArr.concat(skillTags2DArr, stackTags2DArr);
-    const allTags1DArr = [].concat(...(allTags2DArr && allTags2DArr));
-    const postTagsFormatted =
-      allTags1DArr &&
-      allTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
-    setAllTags(postTagsFormatted);
-    const tagsAsPaths =
-      postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
-    setTagsAsPaths(tagsAsPaths);
-  }, []);
-
-  useEffect(() => {
-    // Finds the post thats name matches the URL and sets State as selectedPost
-    const foundPost = allPosts.find(
-      (post) => post.name === window.location.pathname.slice(6)
-    );
-    console.log('foundPost', foundPost);
-    setSelectedPost(foundPost);
   }, []);
 
   // getSetPages = () => {
@@ -150,16 +139,23 @@ function App() {
   //     />
   //   ));
 
+  // console.log(openMenuModal);
   return (
     <div className='App'>
       <Router>
-        <Header />
-        <MenuModal
-          allTags={allTags}
-          postTagsFormatted={postTagsFormatted}
-          allTags1DArr={allTags1DArr}
-          postTags1DArr={postTags1DArr}
+        <Header
+          onMenuBtnClick={() => {
+            setOpenMenuModal(true);
+          }}
         />
+        {openMenuModal && (
+          <MenuModal
+            allTags={allTags}
+            postTagsFormatted={postTagsFormatted}
+            allTags1DArr={allTags1DArr}
+            postTags1DArr={postTags1DArr}
+          />
+        )}
         <Routes>
           <Route
             path='/'

@@ -13,7 +13,7 @@ function Header(props) {
             <p className='logo'>JMDb</p>
           </Link>
 
-          <div className='header__nav-container'>
+          <div className='header__nav-container' onClick={props.onMenuBtnClick}>
             <CgMenu className='header-icon' />
             <p className='header__nav-text'>Menu</p>
           </div>
