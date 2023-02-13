@@ -1,13 +1,7 @@
 import './App.css';
 import './styles/_global.scss';
 import { Component, useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  // Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage';
 import BlogFeedPage from './pages/BlogFeedPage/BlogFeedPage';
@@ -56,7 +50,6 @@ function App() {
         const foundPost = response.data.find(
           (post) => post.name === window.location.pathname.slice(6)
         );
-        // console.log('foundPost', foundPost);
         setSelectedPost(foundPost);
       })
       .catch((err) => {
@@ -64,36 +57,6 @@ function App() {
       });
   }, []);
 
-  // getSetPages = () => {
-  //   const allPosts = this.state.allPosts;
-  //   const allPages2DArr =
-  //     allPosts &&
-  //     allPosts.map((post) => post.pageAndLink.map((page) => `/${page.page}`));
-
-  //   const allPages1DArr = [].concat(...(allPages2DArr && allPages2DArr));
-  //   const pagesAsPaths = [...new Set(allPages1DArr)];
-  //   this.setState({
-  //     pagesAsPaths: pagesAsPaths,
-  //   });
-  //   console.log(pagesAsPaths);
-  // };
-
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('Submit Search Event Target Value:', e.target.search.value);
-  //   this.setState(
-  //     {
-  //       searchSubmitted: true,
-  //       searchTerm: e.target.search.value,
-  //     },
-  //     () => {
-  //       this.getBlogPostsGooglePrior();
-  //     }
-  //   );
-  //   e.target.reset();
-  // };
-
-  // const allPosts = this.state.allPosts;
   const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
   const postTags1DArr = [].concat(...(postTags2DArr && postTags2DArr));
   const skillTags2DArr = allPosts && allPosts.map((post) => post.skillTags);
@@ -106,46 +69,12 @@ function App() {
     allTags1DArr &&
     allTags1DArr.map((tag) => tag.replace(/\s+/g, '-').toLowerCase());
 
-  // const tagsAsPaths =
-  //   postTagsFormatted && postTagsFormatted.map((tag) => `/tag/${tag}`);
-
-  // const tagsAsRoutes =
-  //   postTagsFormatted &&
-  //   postTagsFormatted.map((tag) => (
-  //     <Route
-  //       path={`/tag/${tag}`}
-  //       element={
-  //         <TagFeedPage
-  //           allPosts={this.state.allPosts}
-  //           tagsAsPaths={this.state.tagsAsPaths}
-  //           allTags={this.state.allTags}
-  //         />
-  //       }
-  //     />
-  //   ));
-
-  // const postsAsPaths = allPosts && allPosts.map((post) => `/${post.name}`);
-  // const postsAsRoutes =
-  //   allPosts &&
-  //   allPosts.map((post) => (
-  //     <Route
-  //       path={`/${post.name}`}
-  //       element={
-  //         <BlogPostPage
-  //           selectedPost={this.state.selectedPost}
-  //           getSetPost={this.getSetPost}
-  //         />
-  //       }
-  //     />
-  //   ));
-
-  // console.log(openMenuModal);
   return (
     <div className='App'>
       <Router>
         <Header
           onMenuBtnClick={() => {
-            setOpenMenuModal(true);
+            openMenuModal ? setOpenMenuModal(false) : setOpenMenuModal(true);
           }}
         />
         {openMenuModal && (
