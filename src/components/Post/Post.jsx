@@ -60,6 +60,7 @@ function Post(props) {
   // const postSubtitle = props.selectedPost.subtitle;
   const postTagline = props.selectedPost && props.selectedPost.tagline;
   const postHeroImg = props.selectedPost && props.selectedPost.imgHero;
+  const postHeroImg2 = props.selectedPost && props.selectedPost.imgPoster;
   // const postPosterImg = props.selectedPost.imgPoster;
   // const postIcon = props.selectedPost.icon;
   // const postWrittenDate = props.selectedPost.writtenDate;
@@ -69,6 +70,7 @@ function Post(props) {
   const postSkillTags = props.selectedPost && props.selectedPost.skillTags;
   const postStackTags = props.selectedPost && props.selectedPost.stackTags;
   const postPageAndLink = props.selectedPost && props.selectedPost.pageAndLink;
+  console.log(props.selectedPost);
   const postPublishedDate = new Date(
     props.selectedPost && props.selectedPost.publishedDate
   );
@@ -140,7 +142,7 @@ function Post(props) {
           <div className='post-page-link-container'>
             {postPageAndLink &&
               postPageAndLink.map((object) => {
-                // console.log(object);
+                console.log(object.page);
                 return (
                   <p
                     className='post-page-chip post-page-chip--page-tags'
@@ -160,10 +162,18 @@ function Post(props) {
               backgroundImage: `url(${process.env.REACT_APP_API_URL}${postHeroImg})`,
             }}
           ></div>
+          <div
+            className='post-img2'
+            style={{
+              backgroundImage: `url(${process.env.REACT_APP_API_URL}${postHeroImg2})`,
+            }}
+          ></div>
         </div>
         <div className='post-more-info'>
-          <p className='post-more-info__title'>{postTitle}:&nbsp;</p>
-          <p className='post-subtitle'>{postTagline}</p>
+          <div className='post-more-info__title-container'>
+            <p className='post-more-info__title'>{postTitle}:&nbsp;</p>
+            <p className='post-subtitle'>{postTagline}</p>
+          </div>
           <div className='post-skill-tags'>
             {shownSkillTags &&
               shownSkillTags.map((tag) => {
@@ -181,6 +191,7 @@ function Post(props) {
         </div>
 
         <div className='post-content'>{postContent}</div>
+
         <div className='post-tags'>
           <p className='post-tags__title'>#PostTags</p>
           <div className='post-tags__tags'>

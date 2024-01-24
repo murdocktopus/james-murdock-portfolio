@@ -1,5 +1,5 @@
 // HomePlaylist2.scss
-@use "../../styles/global" as *;
+@use '../../styles/global' as *;
 
 .playlist-small {
   @include margin;
@@ -15,7 +15,8 @@
   &__list-container {
     @include display-flex(row, flex-start, flex-start);
     gap: 1rem;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: nowrap;
 
     @include bp-tablet {

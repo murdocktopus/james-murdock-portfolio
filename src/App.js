@@ -57,6 +57,13 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    const foundPost = allPosts.find(
+      (post) => post.name === window.location.pathname.slice(6)
+    );
+    setSelectedPost(foundPost);
+  }, [allPosts]);
+
   const postTags2DArr = allPosts && allPosts.map((post) => post.tags);
   const postTags1DArr = [].concat(...(postTags2DArr && postTags2DArr));
   const skillTags2DArr = allPosts && allPosts.map((post) => post.skillTags);
@@ -113,13 +120,8 @@ function App() {
             allPosts.map((post) => (
               <Route
                 key={post.id}
-                path={`post/:${post.name}`}
-                element={
-                  <BlogPostPage
-                    selectedPost={selectedPost}
-                    // getSetPost={this.getSetPost}
-                  />
-                }
+                path={`/post/${post.name}`}
+                element={<BlogPostPage selectedPost={selectedPost} />}
               />
             ))}
         </Routes>
